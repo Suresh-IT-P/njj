@@ -611,7 +611,9 @@
     while (feed.children.length > 6) feed.lastElementChild.remove();
   };
   for (let k = 0; k < 6; k++) addFeed(true);
-  $$(".feed-item time", feed).forEach((t, k) => { t.textContent = k === 0 ? "Just now" : `${k * 2} min ago`; });
+  if (feed) {
+    $$(".feed-item time", feed).forEach((t, k) => { t.textContent = k === 0 ? "Just now" : `${k * 2} min ago`; });
+  }
   if (!reduceMotion) setInterval(() => { if (!document.hidden) addFeed(false); }, 3400);
 
   /* -----------------------------------------------------------------------

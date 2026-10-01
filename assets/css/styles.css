@@ -130,6 +130,7 @@
    Base
    ========================================================================= */
 *, *::before, *::after { box-sizing: border-box; }
+html, body { overflow-x: hidden; width: 100%; position: relative; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
@@ -268,6 +269,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   display: inline-flex; align-items: center; gap: 4px;
   height: 36px; padding: 0 12px; border-radius: var(--r-sm);
   font-size: 0.9rem; color: var(--fg-2);
+  white-space: nowrap;
   transition: color var(--t-fast), background-color var(--t-fast);
 }
 .nav-link:hover, .nav-item.is-open > .nav-link { color: var(--fg); background: var(--bg-2); }
@@ -2316,6 +2318,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   font-weight: 700;
   letter-spacing: 0.02em;
   text-decoration: none;
+  white-space: nowrap;
   transition: all 0.25s ease;
 }
 
@@ -2585,4 +2588,9 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   color: var(--muted);
   line-height: 1.4;
 }
+
+
+/* Formula Ribbon Responsive Layout */
+.formula-ribbon { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 36px; font-size: 1.125rem; font-weight: 600; flex-wrap: wrap; }
+@media (max-width: 768px) { .formula-ribbon { flex-direction: column; gap: 12px; } }
 
