@@ -2743,3 +2743,98 @@ img, video, canvas, svg { max-width: 100%; }
   .cta-row .btn { width: 100% !important; margin-bottom: 8px; }
 }
 
+
+/* =========================================================================
+   TOTAL ENTERPRISE REDESIGN SYSTEM (DARK-MODE FIRST)
+   =========================================================================
+:root {
+  --bg: #080c0e !important;
+  --bg-2: #0d1215 !important;
+  --surface: #11181b !important;
+  --surface-2: #162024 !important;
+  --fg: #f0f5f6 !important;
+  --fg-2: #a0b1b4 !important;
+  --muted: #708184 !important;
+  --line: rgba(255, 255, 255, 0.08) !important;
+  --line-2: rgba(255, 255, 255, 0.14) !important;
+  --accent: #00d2b4 !important;
+  --accent-hover: #2ee6ce !important;
+  --accent-fg: #031c18 !important;
+  --accent-soft: rgba(0, 210, 180, 0.12) !important;
+  --accent-line: rgba(0, 210, 180, 0.4) !important;
+  --ok: #2fd080 !important;
+  --warn: #f5b027 !important;
+  --bad: #ff5c5c !important;
+  --info: #4c82f7 !important;
+}
+body {
+  background: #080c0e !important;
+  color: #f0f5f6 !important;
+}
+.site-header {
+  background: rgba(8, 12, 14, 0.85) !important;
+  backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+.section-alt {
+  background: #0d1215 !important;
+}
+.section + .section:not(.section-alt):not(.ink) {
+  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+.glass-card, .feat, .portal-card, .tariff-policy-card, .kpi, .panel, .ctl, .cap, .pillar, .hero-stat-banner, .hierarchy, .closing {
+  background: rgba(17, 24, 27, 0.75) !important;
+  backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35) !important;
+  border-radius: 14px !important;
+  transition: all 0.25s cubic-bezier(0.2, 0.7, 0.2, 1) !important;
+}
+.glass-card:hover, .feat:hover, .portal-card:hover, .tariff-policy-card:hover {
+  border-color: rgba(0, 210, 180, 0.4) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 40px rgba(0, 210, 180, 0.15) !important;
+}
+.btn-primary {
+  background: linear-gradient(135deg, #00d2b4, #00a892) !important;
+  color: #031c18 !important;
+  font-weight: 650 !important;
+  box-shadow: 0 4px 20px rgba(0, 210, 180, 0.35) !important;
+  border: none !important;
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #2ee6ce, #00d2b4) !important;
+  box-shadow: 0 6px 28px rgba(0, 210, 180, 0.5) !important;
+  transform: translateY(-2px) !important;
+}
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: #f0f5f6 !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(12px) !important;
+}
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(0, 210, 180, 0.4) !important;
+  color: #00d2b4 !important;
+}
+.eyebrow {
+  color: #00d2b4 !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.1em !important;
+}
+.pill.acc, .pill.ok {
+  background: rgba(0, 210, 180, 0.15) !important;
+  color: #00d2b4 !important;
+  border: 1px solid rgba(0, 210, 180, 0.3) !important;
+}
+.editorial-img-banner {
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+.editorial-img-overlay {
+  background: linear-gradient(0deg, rgba(8, 12, 14, 0.95) 0%, rgba(8, 12, 14, 0.45) 65%, transparent 100%) !important;
+}
+
