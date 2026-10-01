@@ -1,0 +1,2468 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NJJ Technologies — CityRideTaxi Enterprise Mobility Platform</title>
+<meta name="description" content="NJJ Technologies provides CityRideTaxi as a complete white-label taxi and mobility platform for businesses, fleet operators, vendors, associations, and transportation companies.">
+<meta property="og:title" content="NJJ Technologies — CityRideTaxi Enterprise Mobility Platform">
+<meta property="og:description" content="Intelligent mobility platform built for modern transportation businesses. Real-time operations, automated dispatch, fleet management, and white-label deployment.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0c1113">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "NJJ Technologies",
+  "slogan": "Technology That Moves Businesses Forward.",
+  "description": "Technology company building scalable digital platforms, enterprise software, automation systems and mobility technology.",
+  "makesOffer": {
+    "@type": "Offer",
+    "itemOffered": {
+      "@type": "SoftwareApplication",
+      "name": "CityRideTaxi",
+      "applicationCategory": "BusinessApplication",
+      "description": "Intelligent mobility platform built for modern transportation businesses, fleet operators, vendors and associations."
+    }
+  }
+}
+</script>
+</head>
+<body>
+
+<!-- ======================================================================
+     INTRO SPLASH SCREEN
+     ====================================================================== -->
+<div id="introSplash" class="intro-splash" aria-hidden="true" role="presentation">
+  <canvas id="introCanvas" class="intro-canvas"></canvas>
+
+  <!-- Central brand panel -->
+  <div class="intro-panel">
+    <!-- Animated logo mark -->
+    <div class="intro-logo-wrap">
+      <svg class="intro-logo-svg" viewBox="0 0 56 56" aria-hidden="true">
+        <defs>
+          <linearGradient id="ig1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#0b7a73"/>
+            <stop offset="100%" stop-color="#14b8aa"/>
+          </linearGradient>
+          <filter id="iglow">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <!-- Background rounded square -->
+        <rect class="intro-logo-bg" x="1" y="1" width="54" height="54" rx="14" fill="#0c1113" stroke="url(#ig1)" stroke-width="1.5"/>
+        <!-- N letter paths - drawn via stroke animation -->
+        <path class="intro-logo-path" d="M15 39V17l22 22V17" fill="none" stroke="#e9eeef" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Accent dot -->
+        <circle class="intro-logo-dot" cx="37" cy="17" r="4.5" fill="url(#ig1)" filter="url(#iglow)"/>
+      </svg>
+      <!-- Ripple ring -->
+      <div class="intro-ripple intro-ripple-1"></div>
+      <div class="intro-ripple intro-ripple-2"></div>
+    </div>
+
+    <!-- Brand name -->
+    <div class="intro-brand">
+      <span class="intro-brand-njj">NJJ</span>
+      <span class="intro-brand-sep"></span>
+      <span class="intro-brand-sub">Technologies</span>
+    </div>
+
+    <!-- Tagline typing text -->
+    <div class="intro-tagline">
+      <span id="introTyping" class="intro-typing"></span><span class="intro-cursor">|</span>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="intro-progress-track">
+      <div id="introProgress" class="intro-progress-bar"></div>
+    </div>
+
+    <!-- Product label -->
+    <div class="intro-product">
+      <span class="intro-product-dot"></span>
+      <span>Powering <strong>CityRideTaxi</strong> Enterprise Platform</span>
+    </div>
+  </div>
+
+  <!-- Corner accent lines -->
+  <div class="intro-corner intro-corner-tl"></div>
+  <div class="intro-corner intro-corner-tr"></div>
+  <div class="intro-corner intro-corner-bl"></div>
+  <div class="intro-corner intro-corner-br"></div>
+</div>
+
+<!-- ======================================================================
+     Icon sprite
+     ====================================================================== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-dispatch" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+    <symbol id="i-fare" viewBox="0 0 24 24"><path d="M5 3h14v18l-3-2-2 2-2-2-2 2-2-2-3 2z"/><path d="M9 8h6M9 12h6"/></symbol>
+    <symbol id="i-car" viewBox="0 0 24 24"><path d="M4 16v-4l2.2-5.2A2 2 0 0 1 8 5.5h8a2 2 0 0 1 1.8 1.3L20 12v4"/><path d="M3 12h18v5H3z"/><path d="M6 17v2M18 17v2"/><circle cx="7.5" cy="14.5" r=".6"/><circle cx="16.5" cy="14.5" r=".6"/></symbol>
+    <symbol id="i-vendor" viewBox="0 0 24 24"><path d="M4 21V6l8-3 8 3v15"/><path d="M9 21v-4h6v4M8 8.5h1M15 8.5h1M8 12.5h1M15 12.5h1M2.5 21h19"/></symbol>
+    <symbol id="i-percent" viewBox="0 0 24 24"><path d="M19 5L5 19"/><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="17" r="2.5"/></symbol>
+    <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H15a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h6.5"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 21h18M6 17v-5M11 17V7M16 17v-8M21 17V4"/></symbol>
+    <symbol id="i-brand" viewBox="0 0 24 24"><path d="M12 3l2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z"/></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1"/><circle cx="15" cy="6" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="18" r="2"/></symbol>
+    <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="8" ry="2.8"/><path d="M4 5.5v13c0 1.5 3.6 2.8 8 2.8s8-1.3 8-2.8v-13"/><path d="M4 12c0 1.5 3.6 2.8 8 2.8s8-1.3 8-2.8"/></symbol>
+    <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M2 12h4l3-7 4 14 3-7h6"/></symbol>
+    <symbol id="i-blocks" viewBox="0 0 24 24"><rect x="3" y="3" width="7.5" height="7.5" rx="1"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="M4 20L20 4M14 4h6v6M4 14v6h6"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+    <symbol id="i-call" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></symbol>
+    <symbol id="i-sheet" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 9h16M4 15h16M10 3v18"/></symbol>
+    <symbol id="i-calc" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 9a6 6 0 0 1 12 0c0 6 2.5 7.5 2.5 7.5h-17S6 15 6 9M10 20a2 2 0 0 0 4 0"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 5h16l-6 7v6l-4 2v-8z"/></symbol>
+    <symbol id="i-plane" viewBox="0 0 24 24"><path d="M21 15.5v-2l-8-5V4a1.5 1.5 0 0 0-3 0v4.5l-8 5v2l8-2.5V18l-2 1.5V21l3.5-1 3.5 1v-1.5L13 18v-5z"/></symbol>
+    <symbol id="i-case" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M5 15c-1.5 1.5-2 5-2 5s3.5-.5 5-2M9 15l-3-3c1-4 4-8 12-9-1 8-5 11-9 12z"/><circle cx="14.5" cy="9.5" r="1.5"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="i-idcard" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6 16a3 3 0 0 1 6 0M14 10h4M14 14h3"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 10h18M16 15h2"/></symbol>
+    <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M2 12h4l3-7 4 14 3-7h6"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+    <symbol id="i-export" viewBox="0 0 24 24"><path d="M12 4v11M7 9l5-5 5 5M4 20h16"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.5h.01"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ======================================================================
+     3. HEADER / NAVIGATION
+     ====================================================================== -->
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="#top" aria-label="NJJ Technologies home">
+      <svg class="logo-mark" viewBox="0 0 28 28" aria-hidden="true">
+        <rect width="28" height="28" rx="7" fill="var(--fg)"/>
+        <path d="M8.5 19.5V8.5l11 11V8.5" fill="none" stroke="var(--bg)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="19.5" cy="8.5" r="2.4" fill="var(--accent)"/>
+      </svg>
+      <span class="logo-word"><b>NJJ</b><span>Technologies</span></span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <div class="nav-item" data-dropdown>
+        <button class="nav-link" aria-expanded="false" aria-controls="dd-products">Products <svg class="icon icon-xs chev"><use href="#i-chev"/></svg></button>
+        <div class="dropdown" id="dd-products" role="menu">
+          <div class="dd-label">Flagship Mobility Platform</div>
+          <a class="dd-link" href="#cityride" role="menuitem">
+            <span class="dd-ic"><svg class="icon"><use href="#i-route"/></svg></span>
+            <span><span class="dd-title">CityRideTaxi <span class="tag">B2B Platform</span></span><span class="dd-desc">Complete mobility OS with live apps: Passenger, Driver, Vendor &amp; Admin.</span></span>
+          </a>
+          <div class="dd-label">Live Deployed Portals</div>
+          <a class="dd-link" href="https://cityridetaxi.org/" target="_blank" rel="noopener" role="menuitem">
+            <span class="dd-ic"><svg class="icon"><use href="#i-user"/></svg></span>
+            <span><span class="dd-title">Customer Web &amp; PWA ↗</span><span class="dd-desc">Live passenger booking, parcel dispatch, outstation round-trips &amp; wallet.</span></span>
+          </a>
+          <a class="dd-link" href="https://cityridetaxi.org/driver.html" target="_blank" rel="noopener" role="menuitem">
+            <span class="dd-ic"><svg class="icon"><use href="#i-idcard"/></svg></span>
+            <span><span class="dd-title">Driver Command Center ↗</span><span class="dd-desc">Pilot radar scanner, 15s audio ride ping overlay &amp; turn-by-turn navigation.</span></span>
+          </a>
+          <a class="dd-link" href="https://cityridetaxi.org/vendor.html" target="_blank" rel="noopener" role="menuitem">
+            <span class="dd-ic"><svg class="icon"><use href="#i-vendor"/></svg></span>
+            <span><span class="dd-title">Partner Hub (Vendor) ↗</span><span class="dd-desc">Fleet operator dashboard, sub-fleet driver assignment &amp; profit ledgers.</span></span>
+          </a>
+          <a class="dd-link" href="https://cityridetaxi.org/admin.html" target="_blank" rel="noopener" role="menuitem">
+            <span class="dd-ic"><svg class="icon"><use href="#i-grid"/></svg></span>
+            <span><span class="dd-title">Admin Control Center ↗</span><span class="dd-desc">14 operational modules: live radar, tariffs, audit &amp; dispatch oversight.</span></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="nav-item" data-dropdown>
+        <button class="nav-link" aria-expanded="false" aria-controls="dd-solutions">Solutions <svg class="icon icon-xs chev"><use href="#i-chev"/></svg></button>
+        <div class="dropdown" id="dd-solutions" role="menu">
+          <a class="dd-link" href="#use-cases" role="menuitem"><span class="dd-ic"><svg class="icon"><use href="#i-car"/></svg></span><span><span class="dd-title">Taxi Operators</span><span class="dd-desc">Independent taxi companies launching branded digital apps.</span></span></a>
+          <a class="dd-link" href="#use-cases" role="menuitem"><span class="dd-ic"><svg class="icon"><use href="#i-sliders"/></svg></span><span><span class="dd-title">Fleet Owners</span><span class="dd-desc">Centralized vehicle tracking, driver shift management &amp; telemetry.</span></span></a>
+          <a class="dd-link" href="#vendor-management" role="menuitem"><span class="dd-ic"><svg class="icon"><use href="#i-vendor"/></svg></span><span><span class="dd-title">Vendor Networks</span><span class="dd-desc">Coordinate third-party suppliers, margin settlements and payouts.</span></span></a>
+          <a class="dd-link" href="#use-cases" role="menuitem"><span class="dd-ic"><svg class="icon"><use href="#i-case"/></svg></span><span><span class="dd-title">Corporate Mobility</span><span class="dd-desc">Employee transportation, cost center billing and scheduled routes.</span></span></a>
+        </div>
+      </div>
+
+      <div class="nav-item"><a class="nav-link" href="#cityride">Product Suite</a></div>
+      <div class="nav-item"><a class="nav-link" href="#platform">Platform</a></div>
+      <div class="nav-item"><a class="nav-link" href="#pricing-engine">Tariffs &amp; Fares</a></div>
+      <div class="nav-item"><a class="nav-link" href="#resources">Resources</a></div>
+      <div class="nav-item"><a class="nav-link" href="#company">Company</a></div>
+    </nav>
+
+    <div class="nav-actions">
+      <a class="live-badge-btn" href="https://cityridetaxi.org/" target="_blank" rel="noopener" title="Visit live production platform"><span class="live-dot-pulse"></span>Live Platform ↗</a>
+      <button class="btn btn-ghost btn-sm" type="button" data-open-modal="demo">Book a Demo</button>
+      <a class="btn btn-primary btn-sm" href="#contact" data-focus-form>Get Started</a>
+      <button class="btn btn-secondary btn-icon menu-btn" id="menuOpen" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><svg class="icon"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-panel" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="mobile-top">
+    <a class="logo" href="#top" data-close>
+      <svg class="logo-mark" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="7" fill="var(--fg)"/><path d="M8.5 19.5V8.5l11 11V8.5" fill="none" stroke="var(--bg)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="19.5" cy="8.5" r="2.4" fill="var(--accent)"/></svg>
+      <span class="logo-word"><b>NJJ</b><span>Technologies</span></span>
+    </a>
+    <button class="btn btn-secondary btn-icon" id="menuClose" aria-label="Close menu"><svg class="icon"><use href="#i-close"/></svg></button>
+  </div>
+  <div>
+    <div class="m-group" data-mgroup>
+      <button aria-expanded="false">Products <svg class="icon icon-sm chev"><use href="#i-chev"/></svg></button>
+      <div class="m-sub"><div>
+        <a href="#cityride" data-close>CityRideTaxi Overview</a>
+        <a href="https://cityridetaxi.org/" target="_blank" rel="noopener" data-close>🔴 Live Customer App ↗</a>
+        <a href="https://cityridetaxi.org/driver.html" target="_blank" rel="noopener" data-close>🔴 Live Driver Center ↗</a>
+        <a href="https://cityridetaxi.org/vendor.html" target="_blank" rel="noopener" data-close>🔴 Live Partner Hub ↗</a>
+        <a href="https://cityridetaxi.org/admin.html" target="_blank" rel="noopener" data-close>🔴 Live Admin Portal ↗</a>
+        <a href="#dispatch" data-close>Automated Dispatch</a>
+        <a href="#white-label" data-close>White-Label Platform</a>
+      </div></div>
+    </div>
+    <div class="m-group" data-mgroup>
+      <button aria-expanded="false">Solutions <svg class="icon icon-sm chev"><use href="#i-chev"/></svg></button>
+      <div class="m-sub"><div>
+        <a href="#use-cases" data-close>Taxi Operators</a>
+        <a href="#use-cases" data-close>Fleet Owners</a>
+        <a href="#vendor-management" data-close>Vendor Networks</a>
+        <a href="#use-cases" data-close>Corporate Mobility</a>
+      </div></div>
+    </div>
+    <div class="m-group"><a href="#cityride" data-close>Product Suite</a></div>
+    <div class="m-group"><a href="#platform" data-close>Platform Overview</a></div>
+    <div class="m-group"><a href="#pricing-engine" data-close>Tariff Engine</a></div>
+    <div class="m-group"><a href="#resources" data-close>Resources</a></div>
+    <div class="m-group"><a href="#company" data-close>Company</a></div>
+  </div>
+  <div class="mobile-cta">
+    <a class="btn btn-primary" href="https://cityridetaxi.org/" target="_blank" rel="noopener" style="margin-bottom:8px;">Launch Live Platform ↗</a>
+    <button class="btn btn-secondary" type="button" data-close data-open-modal="demo">Book a Demo <svg class="icon icon-sm arrow"><use href="#i-arrow"/></svg></button>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ======================================================================
+     4. HERO SECTION
+     ====================================================================== -->
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="live-dot-pulse"></span> Enterprise Mobility Infrastructure · Live on cityridetaxi.org</span>
+        <h1 id="hero-title">Build smarter mobility.<br><span class="soft">Operate every ride with confidence.</span></h1>
+        <div class="hero-sub">
+          <p class="lead">CityRideTaxi gives transportation businesses the technology to manage customers, drivers, vendors and trips from one intelligent platform. Deployed live with dedicated portals for riders, pilots, fleet operators, and executive administration.</p>
+          <div class="hero-actions">
+            <div class="cta-row">
+              <a class="btn btn-primary btn-lg" href="#cityride">Explore Product Suite <svg class="icon icon-sm arrow"><use href="#i-arrow"/></svg></a>
+              <a class="btn btn-secondary btn-lg" href="https://cityridetaxi.org/" target="_blank" rel="noopener">Test Live System ↗</a>
+            </div>
+            <div class="micro" aria-label="Key Pillars">
+              <span>Real-Time Mobility</span>
+              <span>Automated Dispatch</span>
+              <span>Multi-Vendor Fleet</span>
+              <span>White-Label</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Realistic CityRideTaxi Operations Dashboard Preview -->
+      <div class="stage" aria-label="CityRideTaxi operations dashboard visualization: real-time telemetry, live map, driver markers, booking counters and alert stream" role="img">
+        <canvas class="net" id="heroNet"></canvas>
+
+        <div class="frag frag-roles">
+          <div class="frag-head">Enterprise Access</div>
+          <div class="frag-body chip-row">
+            <span class="chip"><i></i>Customer</span>
+            <span class="chip"><i></i>Driver</span>
+            <span class="chip"><i></i>Vendor</span>
+            <span class="chip"><i></i>Fleet</span>
+            <span class="chip"><i></i>Admin</span>
+          </div>
+        </div>
+
+        <div class="frag frag-map">
+          <div class="frag-head">
+            <span>CityRide Control Room · Live at cityridetaxi.org</span>
+            <span class="live">Live Telemetry</span>
+          </div>
+          <canvas data-map="hero"></canvas>
+        </div>
+
+        <div class="frag frag-metric">
+          <div class="frag-head">Active trips in progress</div>
+          <div class="frag-body">
+            <div class="kpi-num num" id="heroActive">46</div>
+            <div class="kpi-sub">Across 4 operational zones · real-time</div>
+            <svg class="spark" viewBox="0 0 160 36" preserveAspectRatio="none" aria-hidden="true">
+              <defs><linearGradient id="sparkG" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="var(--accent)" stop-opacity=".25"/><stop offset="1" stop-color="var(--accent)" stop-opacity="0"/></linearGradient></defs>
+              <path id="sparkArea" fill="url(#sparkG)" d=""/>
+              <path id="sparkLine" fill="none" stroke="var(--accent)" stroke-width="1.6" d=""/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="frag frag-dispatch">
+          <div class="frag-head">
+            <span>Automated Dispatch Log</span>
+            <span class="mono">UTC+5:30</span>
+          </div>
+          <div class="frag-body" id="heroEvents">
+            <div class="evt"><i></i><span>CR-20418 assigned to driver D-112</span><time>09:41</time></div>
+            <div class="evt"><i style="background:var(--info)"></i><span>Fare estimate verified · Sedan</span><time>09:41</time></div>
+            <div class="evt"><i style="background:var(--ok)"></i><span>CR-20415 completed · margin settled</span><time>09:40</time></div>
+          </div>
+        </div>
+
+        <div class="frag frag-arch">
+          <div class="frag-head">Platform Architecture</div>
+          <div class="frag-body layers">
+            <div>Mobile &amp; Web Applications</div>
+            <div>Automated Dispatch &amp; Tariffs</div>
+            <div>Real-Time Telemetry Engine</div>
+            <div>Audit-Ready Ledger &amp; Analytics</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Brand Hierarchy Banner -->
+    <div class="hierarchy" aria-label="Brand structure: NJJ Technologies parent to CityRideTaxi platform">
+      <div class="h-cell">
+        <span class="k">Technology Company</span>
+        <span class="v">
+          <svg width="22" height="22" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="7" fill="var(--fg)"/><path d="M8.5 19.5V8.5l11 11V8.5" fill="none" stroke="var(--bg)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="19.5" cy="8.5" r="2.4" fill="var(--accent)"/></svg>
+          <span>NJJ Technologies<small>Enterprise B2B Infrastructure</small></span>
+        </span>
+      </div>
+      <div class="h-arrow" aria-hidden="true"><svg class="icon icon-sm"><use href="#i-arrow"/></svg></div>
+      <div class="h-cell">
+        <span class="k">Flagship Mobility Platform</span>
+        <span class="v">
+          <svg width="22" height="22" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="7" fill="var(--accent)"/><circle cx="9" cy="19" r="2.2" fill="none" stroke="var(--accent-fg)" stroke-width="2"/><path d="M11.2 19H16a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h5" fill="none" stroke="var(--accent-fg)" stroke-width="2" stroke-linecap="round"/><circle cx="19.5" cy="7" r="2" fill="var(--accent-fg)"/></svg>
+          <span>CityRideTaxi<small>Configurable White-Label Platform</small></span>
+        </span>
+      </div>
+      <div class="h-arrow" aria-hidden="true"><svg class="icon icon-sm"><use href="#i-arrow"/></svg></div>
+      <div class="h-cell">
+        <span class="k">One Connected Platform</span>
+        <span class="role-dots"><span>Customer</span><span>Driver</span><span>Vendor</span><span>Fleet</span><span>Admin</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     5. TRUST / POSITIONING STRIP
+     ====================================================================== -->
+<section class="trust-strip" aria-label="Trust and platform capabilities">
+  <div class="container">
+    <div class="trust-strip-inner">
+      <div class="trust-lead">
+        <span class="dot-pulse" aria-hidden="true"></span>
+        <span>Built for transportation businesses that need control at scale.</span>
+      </div>
+      <div class="trust-caps">
+        <span class="trust-cap-pill"><svg class="icon icon-xs"><use href="#i-pulse"/></svg>Real-Time Operations</span>
+        <span class="trust-cap-pill"><svg class="icon icon-xs"><use href="#i-car"/></svg>Fleet Management</span>
+        <span class="trust-cap-pill"><svg class="icon icon-xs"><use href="#i-dispatch"/></svg>Automated Dispatch</span>
+        <span class="trust-cap-pill"><svg class="icon icon-xs"><use href="#i-vendor"/></svg>Vendor Management</span>
+        <span class="trust-cap-pill"><svg class="icon icon-xs"><use href="#i-idcard"/></svg>Driver Management</span>
+        <span class="trust-cap-pill"><svg class="icon icon-xs"><use href="#i-chart"/></svg>Trip Intelligence</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     5B. CITYRIDETAXI LIVE PRODUCT SUITE (cityridetaxi.org)
+     ====================================================================== -->
+<section class="section section-alt" id="cityride" aria-labelledby="cityride-title">
+  <div class="container">
+    <div class="section-head split">
+      <div style="display:grid;gap:18px">
+        <span class="eyebrow"><span class="live-dot-pulse"></span> Flagship Mobility Platform · Live in Production</span>
+        <h2 class="h2" id="cityride-title">The CityRideTaxi Ecosystem.<br><span class="soft">Four interconnected portals. One intelligent core.</span></h2>
+      </div>
+      <p class="lead">CityRideTaxi is deployed live at <strong><a href="https://cityridetaxi.org/" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">cityridetaxi.org</a></strong>. Experience our real-world, enterprise-grade white-label technology across dedicated interfaces for passengers, drivers, fleet operators, and executive administrators.</p>
+    </div>
+
+    <!-- Live Status Strip -->
+    <div class="live-production-strip">
+      <div class="live-production-info">
+        <span class="live-dot-pulse"></span>
+        <div>
+          <b>Production Platform Live at cityridetaxi.org</b>
+          <p>Real-time Socket.IO dispatch engine, OpenStreetMap geocoding, and multi-tier fare architecture active 24/7.</p>
+        </div>
+      </div>
+      <a class="live-badge-btn" href="https://cityridetaxi.org/" target="_blank" rel="noopener">Launch Live Customer App ↗</a>
+    </div>
+
+    <!-- 4 Portals Grid -->
+    <div class="cityride-portals-grid">
+      <!-- Portal 1: Customer Web & Mobile App -->
+      <article class="portal-card">
+        <div>
+          <div class="portal-card-top">
+            <div class="portal-icon-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <span class="portal-tag"><span class="live-dot-pulse"></span> Live · Rider App</span>
+          </div>
+          <h3 class="portal-title">Customer Web &amp; Mobile App</h3>
+          <p class="portal-desc">Consumer-grade booking interface for local city trips, inter-city outstation travel, and on-demand parcel deliveries.</p>
+          <ul class="portal-features-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><b>3 Travel Categories:</b> Local rides, Outstation (One-Way min 130 km, Round-Trip toggle with return date), and Parcel dispatch.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><b>Parcel Logistics:</b> 3 tiered weight categories (&lt;5kg Bike, 5-15kg Auto, 15-30kg Cab) with sender &amp; receiver contact verification.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><b>Interactive Map Picker:</b> Crosshair pin with automated reverse geocoding and live location detection.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><b>Multi-Passenger Capacity:</b> Flexible seat allocation from 1 up to 12 Passengers per booking.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><b>Wallet &amp; Promo Engine:</b> In-app digital wallet, coupon discounts (e.g. WELCOME50), live tracking, and printable PDF invoices.</span></li>
+          </ul>
+        </div>
+        <div class="portal-card-footer">
+          <span class="portal-url-label">cityridetaxi.org/</span>
+          <a class="portal-launch-btn" href="https://cityridetaxi.org/" target="_blank" rel="noopener">Open Customer App ↗</a>
+        </div>
+      </article>
+
+      <!-- Portal 2: Driver Command Center -->
+      <article class="portal-card">
+        <div>
+          <div class="portal-card-top">
+            <div class="portal-icon-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6 16a3 3 0 0 1 6 0M14 10h4M14 14h3"/></svg>
+            </div>
+            <span class="portal-tag"><span class="live-dot-pulse"></span> Live · Pilot App</span>
+          </div>
+          <h3 class="portal-title">Driver Command Center</h3>
+          <p class="portal-desc">Dedicated driver partner cockpit with real-time radar scanning, audio-visual ride ping overlays, and earnings ledgers.</p>
+          <ul class="portal-features-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><b>Duty Toggle &amp; Radar Scanner:</b> One-tap Online/Offline switch with animated scanning radar beacon and ripple rings.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><b>15-Second Ping Overlay:</b> Fullscreen incoming ride alert with acoustic chime, SVG circular timer, and instant Accept/Reject buttons.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><b>Live Routing:</b> In-app GPS telemetry with direct turn-by-turn routing shortcuts to Google Maps and Waze.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><b>Performance Scorecards:</b> Real-time metric rings tracking Customer Rating, Acceptance Rate, and Cancellation Rate.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><b>Digital Wallet &amp; KYC:</b> Shift earnings breakdown, instant payout requests, and digital document uploads (License, RC, Insurance).</span></li>
+          </ul>
+        </div>
+        <div class="portal-card-footer">
+          <span class="portal-url-label">cityridetaxi.org/driver.html</span>
+          <a class="portal-launch-btn" href="https://cityridetaxi.org/driver.html" target="_blank" rel="noopener">Open Driver Center ↗</a>
+        </div>
+      </article>
+
+      <!-- Portal 3: Partner Hub (Vendor Portal) -->
+      <article class="portal-card">
+        <div>
+          <div class="portal-card-top">
+            <div class="portal-icon-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21V6l8-3 8 3v15"/><path d="M9 21v-4h6v4M8 8.5h1M15 8.5h1M8 12.5h1M15 12.5h1M2.5 21h19"/></svg>
+            </div>
+            <span class="portal-tag"><span class="live-dot-pulse"></span> Live · Vendor Hub</span>
+          </div>
+          <h3 class="portal-title">Partner Hub (Vendor Portal)</h3>
+          <p class="portal-desc">Enterprise portal empowering fleet operators, taxi vendors, and vehicle suppliers to manage their mini-fleets and settlements.</p>
+          <ul class="portal-features-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><b>Sub-Fleet Vehicle Onboarding:</b> Register and maintain vehicles across categories (Sedan, SUV, EV, Auto, Commercial).</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><b>Driver Roster &amp; Assignment:</b> Pair verified drivers with assigned cars and manage duty shifts.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><b>Trip Dispatch &amp; Allocation:</b> View real-time incoming booking requests, assign drivers, and track active trip telemetry.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><b>Margin &amp; Profit Ledger:</b> Transparent automated revenue split (customizable platform cut, vendor margin, driver share).</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><b>District Association Frameworks:</b> Unified cooperation rules for unionized taxi operators and shared booking pools.</span></li>
+          </ul>
+        </div>
+        <div class="portal-card-footer">
+          <span class="portal-url-label">cityridetaxi.org/vendor.html</span>
+          <a class="portal-launch-btn" href="https://cityridetaxi.org/vendor.html" target="_blank" rel="noopener">Access Partner Hub ↗</a>
+        </div>
+      </article>
+
+      <!-- Portal 4: Admin Control Center -->
+      <article class="portal-card">
+        <div>
+          <div class="portal-card-top">
+            <div class="portal-icon-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7.5" height="7.5" rx="1"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1"/></svg>
+            </div>
+            <span class="portal-tag"><span class="live-dot-pulse"></span> Live · Admin Suite</span>
+          </div>
+          <h3 class="portal-title">Admin Control Center</h3>
+          <p class="portal-desc">The master executive command center equipped with 14 specialized management, analytics, and operational modules.</p>
+          <ul class="portal-features-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><b>Operations:</b> Execution Overview KPI dashboards, Live Fleet Radar (real-time vehicle GPS on Leaflet), Mission Control booking triage.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><b>Management:</b> Pilot Management (driver vetting, KYC docs), Wallet Registry, Member Registry, Network Partners, District Associations.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><b>Analytics:</b> Profit Ledger, System Reports (exportable PDF &amp; Excel via jsPDF-autoTable), Underground Level Telemetry, Vehicle &amp; District Audits.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><b>Configuration:</b> Tariff Engine (base rate, per-km, driver betta, waiting, hill station), Promotional Offers, Profit Deductions Engine.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><b>Socket.IO Sync:</b> Real-time bidirectional telemetry with automated reconnection and enterprise security protocols.</span></li>
+          </ul>
+        </div>
+        <div class="portal-card-footer">
+          <span class="portal-url-label">cityridetaxi.org/admin.html</span>
+          <a class="portal-launch-btn" href="https://cityridetaxi.org/admin.html" target="_blank" rel="noopener">Open Admin Portal ↗</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     6. PROBLEM SECTION
+     ====================================================================== -->
+<section class="section" id="problem" aria-labelledby="prob-title">
+  <div class="container">
+    <div class="section-head split">
+      <div style="display:grid;gap:18px">
+        <span class="eyebrow">The Operational Challenge</span>
+        <h2 class="h2" id="prob-title">Mobility operations are complex.<br>Your technology shouldn't be.</h2>
+      </div>
+      <p class="lead">Traditional taxi and transportation operators struggle with legacy dispatch software, siloed vendor spreadsheets, and disconnected customer touchpoints that erode margins and limit growth.</p>
+    </div>
+
+    <div class="problem-grid">
+      <!-- Card 1 -->
+      <article class="problem-card">
+        <div>
+          <div class="problem-header">
+            <span class="problem-num">01 / SILOED DATA</span>
+            <svg class="icon icon-sm" style="color:var(--bad)"><use href="#i-sheet"/></svg>
+          </div>
+          <h3>Fragmented Operations</h3>
+          <p>Driver and vehicle information spread across multiple systems, creating blind spots, duplicate paperwork, and compliance liabilities.</p>
+        </div>
+        <div class="problem-vis" aria-hidden="true">
+          <div class="prob-diag-row"><span>Driver Records (System A)</span><span class="pill bad">Desynced</span></div>
+          <div class="prob-diag-row"><span>Vehicle Inspection (Excel)</span><span class="pill warn">Unverified</span></div>
+          <div class="prob-diag-row"><span>Shift Roster (Phone calls)</span><span class="pill bad">Manual</span></div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="problem-card">
+        <div>
+          <div class="problem-header">
+            <span class="problem-num">02 / BOTTLENECKS</span>
+            <svg class="icon icon-sm" style="color:var(--bad)"><use href="#i-call"/></svg>
+          </div>
+          <h3>Manual Dispatch</h3>
+          <p>Time-consuming driver assignment and trip coordination through telephone calls and messaging channels, leading to high ETA delays and dropped bookings.</p>
+        </div>
+        <div class="problem-vis" aria-hidden="true">
+          <div class="prob-diag-row"><span>Manual Call Duration</span><b class="num" style="color:var(--bad)">3 to 6 mins</b></div>
+          <div class="prob-diag-bar"><i style="width:78%;background:var(--bad)"></i></div>
+          <div class="prob-diag-row"><span>Automated CityRide Algorithm</span><b class="num" style="color:var(--ok)">400 ms</b></div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="problem-card">
+        <div>
+          <div class="problem-header">
+            <span class="problem-num">03 / OPACITY</span>
+            <svg class="icon icon-sm" style="color:var(--bad)"><use href="#i-eye"/></svg>
+          </div>
+          <h3>Limited Visibility</h3>
+          <p>Businesses lack real-time visibility into active trips and fleet operations, making it impossible to enforce SLAs, verify routes, or respond to emergencies.</p>
+        </div>
+        <div class="problem-vis" aria-hidden="true">
+          <div class="prob-diag-row"><span>Real-Time Fleet Location</span><span class="pill bad">Unknown</span></div>
+          <div class="prob-diag-row"><span>Route Deviations</span><span class="pill warn">Unrecorded</span></div>
+          <div class="prob-diag-row"><span>Actual Metering Accuracy</span><span class="pill bad">Disputed</span></div>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="problem-card">
+        <div>
+          <div class="problem-header">
+            <span class="problem-num">04 / DISCORD</span>
+            <svg class="icon icon-sm" style="color:var(--bad)"><use href="#i-vendor"/></svg>
+          </div>
+          <h3>Disconnected Vendors</h3>
+          <p>Vendor, driver and fleet operations are difficult to coordinate. Reconciling commissions, margin splits, and weekly payouts requires weeks of manual audits.</p>
+        </div>
+        <div class="problem-vis" aria-hidden="true">
+          <div class="prob-diag-row"><span>Vendor Dispute Frequency</span><b class="num" style="color:var(--bad)">High</b></div>
+          <div class="prob-diag-row"><span>Margin Reconciliation Time</span><b class="num" style="color:var(--warn)">14 Days</b></div>
+          <div class="prob-diag-row"><span>CityRide Automated Settlement</span><b class="num" style="color:var(--ok)">Instant / Shift-based</b></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     7. SOLUTION SECTION
+     ====================================================================== -->
+<section class="section section-alt" id="solution" aria-labelledby="sol-sec-title">
+  <div class="container">
+    <div class="section-head split">
+      <div style="display:grid;gap:18px">
+        <span class="eyebrow">The Connected Solution</span>
+        <h2 class="h2" id="sol-sec-title">One platform.<br>Every moving part.</h2>
+      </div>
+      <p class="lead">CityRideTaxi connects the entire transportation ecosystem into one unified operational infrastructure. Every booking, vehicle, driver, vendor, and association operates on shared data and real-time business logic.</p>
+    </div>
+
+    <!-- 7-Node Ecosystem Visualization -->
+    <div class="eco" id="eco">
+      <svg class="eco-svg" id="ecoSvg" aria-hidden="true"></svg>
+
+      <!-- Node 1: Customer -->
+      <article class="eco-node eco-n1" data-eco="0">
+        <header><span class="ic"><svg class="icon icon-sm"><use href="#i-user"/></svg></span><h3>CUSTOMER<small>Passenger App &amp; Web</small></h3></header>
+        <ul><li>Instant Ride Booking</li><li>Fare Estimate Calculator</li><li>Driver &amp; Vehicle Verification</li><li>Live Turn-by-Turn Tracking</li><li>Digital Payments &amp; Receipts</li></ul>
+      </article>
+
+      <!-- Node 2: Driver -->
+      <article class="eco-node eco-n2" data-eco="1">
+        <header><span class="ic"><svg class="icon icon-sm"><use href="#i-idcard"/></svg></span><h3>DRIVER<small>Driver Application</small></h3></header>
+        <ul><li>One-Tap Ride Acceptance</li><li>Smart In-App Navigation</li><li>Shift &amp; Duty Management</li><li>Transparent Earnings</li><li>Emergency Safety Alerts</li></ul>
+      </article>
+
+      <!-- Core Node: CITYRIDETAXI -->
+      <div class="eco-core" id="ecoCore">
+        <div class="eco-core-ring"><span class="eco-core-orbit"></span></div>
+        <div class="eco-core-ring r2"></div>
+        <div class="eco-core-in">
+          <b>CITYRIDETAXI<br>CORE</b>
+          <small>Platform by NJJ Technologies</small>
+        </div>
+      </div>
+
+      <!-- Node 3: Vendor -->
+      <article class="eco-node eco-n3" data-eco="2">
+        <header><span class="ic"><svg class="icon icon-sm"><use href="#i-vendor"/></svg></span><h3>VENDOR<small>Vendor Portal</small></h3></header>
+        <ul><li>Sub-Fleet Management</li><li>Driver Assignment</li><li>Live Trip Monitoring</li><li>Margin &amp; Payout Rules</li><li>Settlement History</li></ul>
+      </article>
+
+      <!-- Node 4: Fleet -->
+      <article class="eco-node eco-n4" data-eco="3">
+        <header><span class="ic"><svg class="icon icon-sm"><use href="#i-car"/></svg></span><h3>FLEET<small>Fleet Control</small></h3></header>
+        <ul><li>Vehicle Classification</li><li>Document Compliance</li><li>Live Availability Roster</li><li>Maintenance Tracking</li><li>Fuel &amp; Range Status</li></ul>
+      </article>
+
+      <!-- Additional Connected Nodes in ecosystem -->
+      <article class="eco-node eco-admin" data-eco="4" style="grid-column: 1 / -1; display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px;">
+        <div>
+          <header><span class="ic"><svg class="icon icon-sm"><use href="#i-grid"/></svg></span><h3>ADMIN<small>Central Control Center</small></h3></header>
+          <p style="font-size:0.8125rem;color:var(--fg-2);margin-top:8px">Super-admin operational controls, tariff engines, fraud detection, security, and global platform configuration.</p>
+        </div>
+        <div>
+          <header><span class="ic"><svg class="icon icon-sm"><use href="#i-users"/></svg></span><h3>ASSOCIATION<small>Taxi Union / Network</small></h3></header>
+          <p style="font-size:0.8125rem;color:var(--fg-2);margin-top:8px">Shared booking pools, regional tariff alignment, operator bylaws, and mutual fleet cooperation frameworks.</p>
+        </div>
+        <div>
+          <header><span class="ic"><svg class="icon icon-sm"><use href="#i-pulse"/></svg></span><h3>OPERATIONS<small>Dispatch &amp; Support</small></h3></header>
+          <p style="font-size:0.8125rem;color:var(--fg-2);margin-top:8px">Real-time intervention desk, ride re-routing, customer service ticketing, and SOS emergency response.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="eco-legend">
+      <span><i></i>Live telemetry flow</span>
+      <span><i class="s"></i>System protocol</span>
+      <span><svg class="icon icon-sm" style="color:var(--accent)"><use href="#i-lock"/></svg>Role-based cryptographic security across all interfaces</span>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     8. PLATFORM OVERVIEW (Two-Column Layout with Expandable Feature Rows)
+     ====================================================================== -->
+<section class="section" id="platform" aria-labelledby="plat-title">
+  <div class="container">
+    <div class="platform-cols">
+      <!-- Left Column: Large Heading & Editorial Context -->
+      <div class="platform-sticky">
+        <span class="eyebrow">Platform Overview</span>
+        <h2 id="plat-title">Everything your mobility business needs to operate.</h2>
+        <p class="lead">CityRideTaxi is not a single app. It is a comprehensive, configurable technology infrastructure built for scale, reliability, and total operational autonomy.</p>
+
+        <div class="platform-badges">
+          <div class="platform-badge-item">
+            <svg class="icon icon-sm"><use href="#i-check"/></svg>
+            <div><b>White-Label Ready:</b> Run apps and portals under your company's own identity, brand colors, and domains.</div>
+          </div>
+          <div class="platform-badge-item">
+            <svg class="icon icon-sm"><use href="#i-check"/></svg>
+            <div><b>Unified Ledger:</b> Fares, taxes, commissions, and margins automatically calculate and settle on every trip.</div>
+          </div>
+          <div class="platform-badge-item">
+            <svg class="icon icon-sm"><use href="#i-check"/></svg>
+            <div><b>Enterprise Architecture:</b> High availability real-time sockets with failover safety and end-to-end data isolation.</div>
+          </div>
+        </div>
+
+        <div>
+          <button type="button" class="btn btn-primary" data-open-modal="demo">Request Platform Walkthrough <svg class="icon icon-sm arrow"><use href="#i-arrow"/></svg></button>
+        </div>
+      </div>
+
+      <!-- Right Column: 10 Expandable Feature Rows -->
+      <div class="acc-rows" id="platformAccordion">
+        <!-- 1. Customer Management -->
+        <div class="acc-row is-open">
+          <button type="button" class="acc-btn" aria-expanded="true">
+            <span style="display:flex;align-items:center;gap:12px;">
+              <span class="num-tag">01</span>
+              <span>Customer Management</span>
+            </span>
+            <svg class="chev-icon icon icon-xs"><use href="#i-chev"/></svg>
+          </button>
+          <div class="acc-panel">
+            <div>
+              <div class="acc-content">
+                <p>Onboard, verify, and retain riders with modern mobile applications. Manage passenger profiles, ride history, payment preferences, corporate profiles, and automated notification preferences.</p>
+                <div class="acc-tags">
+                  <span class="acc-tag">OTP Authentication</span>
+                  <span class="acc-tag">Saved Locations</span>
+                  <span class="acc-tag">Corporate Billing</span>
+                  <span class="acc-tag">In-App Support</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Driver Management -->
+        <div class="acc-row">
+          <button type="button" class="acc-btn" aria-expanded="false">
+            <span style="display:flex;align-items:center;gap:12px;">
+              <span class="num-tag">02</span>
+              <span>Driver Management</span>
+            </span>
+            <svg class="chev-icon icon icon-xs"><use href="#i-chev"/></svg>
+          </button>
+          <div class="acc-panel">
+            <div>
+              <div class="acc-content">
+                <p>End-to-end driver lifecycle management: digital document uploads, background checks, vehicle association, shift scheduling, performance scorecards, and automated earnings reconciliation.</p>
+                <div class="acc-tags">
+                  <span class="acc-tag">Document Verification</span>
+                  <span class="acc-tag">Shift Rostering</span>
+                  <span class="acc-tag">Rating &amp; Conduct</span>
+                  <span class="acc-tag">Instant Payouts</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Vendor Management -->
+        <div class="acc-row">
+          <button type="button" class="acc-btn" aria-expanded="false">
+            <span style="display:flex;align-items:center;gap:12px;">
+              <span class="num-tag">03</span>
+              <span>Vendor Management</span>
+            </span>
+            <svg class="chev-icon icon icon-xs"><use href="#i-chev"/></svg>
+          </button>
+          <div class="acc-panel">
+            <div>
+              <div class="acc-content">
+                <p>Enable sub-operators, vehicle owners, and regional taxi suppliers to manage their own mini-fleets while operating under your centralized platform governance and automated commission split.</p>
+                <div class="acc-tags">
+                  <span class="acc-tag">Vendor Portal</span>
+                  <span class="acc-tag">Sub-Fleet Allocation</span>
+                  <span class="acc-tag">Margin Rules</span>
+                  <span class="acc-tag">Payout Invoicing</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Fleet Management -->
+        <div class="acc-row">
+          <button type="button" class="acc-btn" aria-expanded="false">
+            <span style="display:flex;align-items:center;gap:12px;">
+              <span class="num-tag">04</span>
+              <span>Fleet Management</span>
+            </span>
+            <svg class="chev-icon icon icon-xs"><use href="#i-chev"/></svg>
+          </button>
+          <div class="acc-panel">
+            <div>
+              <div class="acc-content">
+                <p>Maintain complete oversight of vehicle inventories: category definitions (Sedan, SUV, EV, Premium), registration renewals, insurance validity, odometer logs, and real-time maintenance status.</p>
+                <div class="acc-tags">
+                  <span class="acc-tag">Category Config</span>
+                  <span class="acc-tag">Fitness Tracking</span>
+                  <span class="acc-tag">Availability State</span>
+                  <span class="acc-tag">Maintenance Logs</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Trip Management -->
+        <div class="acc-row">
+          <button type="button" class="acc-btn" aria-expanded="false">
+            <span style="display:flex;align-items:center;gap:12px;">
+              <span class="num-tag">05</span>
+              <span>Trip Management</span>
+            </span>
+            <svg class="chev-icon icon icon-xs"><use href="#i-chev"/></svg>
+          </button>
+          <div class="acc-panel">
+            <div>
+              <div class="acc-content">
+                <p>Track every booking through its full lifecycle: requested, dispatched, accepted, arriving, started, en route, completed, or cancelled, with immutable cryptographic logs for every milestone.</p>
+                <div class="acc-tags">
+                  <span class="acc-tag">State Machine</span>
+                  <span class="acc-tag">Route Geometry</span>
+                  <span class="acc-tag">Wait-Time Auditing</span>
+                  <span class="acc-tag">Cancellation Analysis</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Dispatch Management -->
+        <div class="acc-row">
+          <button type="button" class="acc-btn" aria-expanded="false">
+            <span style="display:flex;align-items:center;gap:12px;">
+              <span class="num-tag">06</span>
+              <span>Dispatch Management</span>
+            </span>
+            <svg class="chev-icon icon icon-xs"><use href="#i-chev"/></svg>
+          </button>
+          <div class="acc-panel">
+            <div>
+              <div class="acc-content">
+                <p>Automate driver matching based on proximity, rating, vehicle qualification, and queue priority. Support manual dispatcher override for scheduled VIP trips, outstation charters, and airport queues.</p>
+                <div class="acc-tags">
+                  <span class="acc-tag">Automated Matching</span>
+                  <span class="acc-tag">Geofence Queuing</span>
+                  <span class="acc-tag">Dispatcher Override</span>
+                  <span class="acc-tag">Scheduled Bookings</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Fare Management -->
+        <div class="acc-row">
+          <button type="button" class="acc-btn" aria-expanded="false">
+            <span style="display:flex;align-items:center;gap:12px;">
+              <span class="num-tag">07</span>
+              <span>Fare Management</span>
+            </span>
+            <svg class="chev-icon icon icon-xs"><use href="#i-chev"/></svg>
+          </button>
+          <div class="acc-panel">
+            <div>
+              <div class="acc-content">
+                <p>Configure dynamic pricing models: base tariffs, per-kilometer rates, minute charges, waiting fees, airport tolls, peak-hour multipliers, and custom zone-to-zone fixed pricing.</p>
+                <div class="acc-tags">
+                  <span class="acc-tag">Zone Tariffs</span>
+                  <span class="acc-tag">Time/Distance Matrices</span>
+                  <span class="acc-tag">Peak Multipliers</span>
+                  <span class="acc-tag">Airport Surcharges</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Commission Management -->
+        <div class="acc-row">
+          <button type="button" class="acc-btn" aria-expanded="false">
+            <span style="display:flex;align-items:center;gap:12px;">
+              <span class="num-tag">08</span>
+              <span>Commission Management</span>
+            </span>
+            <svg class="chev-icon icon icon-xs"><use href="#i-chev"/></svg>
+          </button>
+          <div class="acc-panel">
+            <div>
+              <div class="acc-content">
+                <p>Define multi-tier financial distributions. Configure platform revenue cuts, vendor fleet margins, driver incentives, and tax deductions with complete ledger transparency.</p>
+                <div class="acc-tags">
+                  <span class="acc-tag">Multi-Tier Splits</span>
+                  <span class="acc-tag">Automated Tax (GST)</span>
+                  <span class="acc-tag">Driver Incentive Rules</span>
+                  <span class="acc-tag">Wallet Statements</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Live Tracking -->
+        <div class="acc-row">
+          <button type="button" class="acc-btn" aria-expanded="false">
+            <span style="display:flex;align-items:center;gap:12px;">
+              <span class="num-tag">09</span>
+              <span>Live Tracking</span>
+            </span>
+            <svg class="chev-icon icon icon-xs"><use href="#i-chev"/></svg>
+          </button>
+          <div class="acc-panel">
+            <div>
+              <div class="acc-content">
+                <p>High-frequency GPS telemetry streaming using lightweight WebSockets. Smooth vehicle movement interpolation, live ETA recalculation, route deviation alerts, and shareable passenger safety tracking links.</p>
+                <div class="acc-tags">
+                  <span class="acc-tag">Sub-Second Telemetry</span>
+                  <span class="acc-tag">Bearing Smoothing</span>
+                  <span class="acc-tag">Safety Tracking Links</span>
+                  <span class="acc-tag">Boundary Alerts</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10. Reports & Analytics -->
+        <div class="acc-row">
+          <button type="button" class="acc-btn" aria-expanded="false">
+            <span style="display:flex;align-items:center;gap:12px;">
+              <span class="num-tag">10</span>
+              <span>Reports &amp; Analytics</span>
+            </span>
+            <svg class="chev-icon icon icon-xs"><use href="#i-chev"/></svg>
+          </button>
+          <div class="acc-panel">
+            <div>
+              <div class="acc-content">
+                <p>Operational intelligence dashboards summarizing booking volume, fleet utilization percentages, driver retention metrics, customer acquisition costs, and revenue growth across zones and time periods.</p>
+                <div class="acc-tags">
+                  <span class="acc-tag">Daily Audits</span>
+                  <span class="acc-tag">Zone Heatmaps</span>
+                  <span class="acc-tag">Utilization Metrics</span>
+                  <span class="acc-tag">Automated CSV/PDF Export</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     9. REAL-TIME OPERATIONS (Dedicated Control Center)
+     ====================================================================== -->
+<section class="section section-alt" id="real-time" aria-labelledby="rt-title">
+  <div class="container">
+    <div class="section-head split">
+      <div style="display:grid;gap:18px">
+        <span class="eyebrow">Real-Time Control Room</span>
+        <h2 class="h2" id="rt-title">See every ride.<br>Control every movement.</h2>
+      </div>
+      <p class="lead">CityRideTaxi equips operators with an intelligent mission-control interface. Track every moving vehicle, monitor ride progress, audit ETAs, and identify bottlenecks across your entire operating territory in real time.</p>
+    </div>
+
+    <!-- Editorial Mobility Imagery Preview -->
+    <div class="editorial-img-banner">
+      <img src="assets/img/mobility-network.jpg" alt="NJJ Technologies connected smart city mobility network and intelligent transit routing infrastructure" loading="lazy">
+      <div class="editorial-img-overlay">
+        <div>
+          <span class="pill acc" style="margin-bottom:12px">Central Dispatch Telemetry</span>
+          <h3>Connected Urban Mobility Infrastructure</h3>
+          <p>Real-time vehicle location feeds, traffic-aware routing matrices, and low-latency geospatial synchronization connecting hundreds of fleet vehicles to central dispatch.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Live Operations Control Interface -->
+    <div class="rt-ops-stage">
+      <div class="rt-ops-toolbar">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <span class="live">Live Control Room</span>
+          <span style="font-size:0.875rem;font-weight:600">Metropolitan Fleet Sector 01–04</span>
+          <span class="pill ok">All Systems Operational</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span class="selectish"><svg class="icon icon-xs"><use href="#i-filter"/></svg>Filter: All Fleets<svg class="icon icon-xs"><use href="#i-chev"/></svg></span>
+          <span class="selectish"><svg class="icon icon-xs"><use href="#i-pin"/></svg>Zone: Central &amp; Airport<svg class="icon icon-xs"><use href="#i-chev"/></svg></span>
+        </div>
+      </div>
+
+      <div class="rt-ops-canvas-wrap">
+        <canvas data-map="live-control" id="controlRoomMap"></canvas>
+
+        <!-- 4 Floating Operational Cards -->
+        <div class="floating-cards-grid">
+          <div class="floating-card">
+            <span class="val">128</span>
+            <span class="lbl"><i style="background:var(--accent)"></i>Active Trips</span>
+            <span style="font-size:11px;color:var(--muted)">Across all 4 urban zones</span>
+          </div>
+          <div class="floating-card">
+            <span class="val">76</span>
+            <span class="lbl"><i style="background:var(--ok)"></i>Available Drivers</span>
+            <span style="font-size:11px;color:var(--muted)">Ready for instant dispatch</span>
+          </div>
+          <div class="floating-card">
+            <span class="val">42</span>
+            <span class="lbl"><i style="background:var(--info)"></i>Trips In Progress</span>
+            <span style="font-size:11px;color:var(--muted)">Passenger onboard &amp; en route</span>
+          </div>
+          <div class="floating-card">
+            <span class="val">18</span>
+            <span class="lbl"><i style="background:var(--warn)"></i>Drivers Near Pickup</span>
+            <span style="font-size:11px;color:var(--muted)">Under 3 min estimated arrival</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     10. INTELLIGENT DISPATCH (Automated Driver Assignment Flow)
+     ====================================================================== -->
+<section class="section" id="dispatch" aria-labelledby="disp-title">
+  <div class="container">
+    <div class="section-head split">
+      <div style="display:grid;gap:18px">
+        <span class="eyebrow">Dispatch Automation</span>
+        <h2 class="h2" id="disp-title">Smarter dispatch.<br>Less manual coordination.</h2>
+      </div>
+      <p class="lead">Automatically identify suitable drivers based on availability, location, vehicle type and operational rules. Cut dispatch overhead to zero while slashing passenger waiting times.</p>
+    </div>
+
+    <!-- 8-Step Automated Driver Assignment Workflow -->
+    <div class="dispatch-stepper" id="dispatchStepper" role="region" aria-label="Dispatch assignment workflow">
+      <div class="dispatch-node is-active" tabindex="0">
+        <span class="step-num">01</span>
+        <span class="step-title">NEW BOOKING</span>
+        <small style="color:var(--muted);font-size:11px">Trip created</small>
+      </div>
+      <div class="dispatch-node" tabindex="0">
+        <span class="step-num">02</span>
+        <span class="step-title">Trip Location</span>
+        <small style="color:var(--muted);font-size:11px">Geocode &amp; zone</small>
+      </div>
+      <div class="dispatch-node" tabindex="0">
+        <span class="step-num">03</span>
+        <span class="step-title">Available Drivers</span>
+        <small style="color:var(--muted);font-size:11px">Polygon query</small>
+      </div>
+      <div class="dispatch-node" tabindex="0">
+        <span class="step-num">04</span>
+        <span class="step-title">Vehicle Validation</span>
+        <small style="color:var(--muted);font-size:11px">Category check</small>
+      </div>
+      <div class="dispatch-node" tabindex="0">
+        <span class="step-num">05</span>
+        <span class="step-title">Distance / ETA</span>
+        <small style="color:var(--muted);font-size:11px">Route scoring</small>
+      </div>
+      <div class="dispatch-node" tabindex="0">
+        <span class="step-num">06</span>
+        <span class="step-title">Automatic Assignment</span>
+        <small style="color:var(--muted);font-size:11px">Algorithmic push</small>
+      </div>
+      <div class="dispatch-node" tabindex="0">
+        <span class="step-num">07</span>
+        <span class="step-title">Driver Confirmation</span>
+        <small style="color:var(--muted);font-size:11px">15s countdown</small>
+      </div>
+      <div class="dispatch-node" tabindex="0">
+        <span class="step-num">08</span>
+        <span class="step-title">Trip Started</span>
+        <small style="color:var(--muted);font-size:11px">Telemetry active</small>
+      </div>
+    </div>
+
+    <!-- Live Step Explanation Box -->
+    <div style="background:var(--bg-2);border:1px solid var(--line);border-radius:var(--r-md);padding:24px;margin-top:24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <span class="tag" style="background:var(--accent);color:#fff">Active Logic Rule</span>
+        <span id="dispatchRuleExplain" style="font-size:0.9375rem;font-weight:500;color:var(--fg);">Step 1: Rider creates a booking specifying pickup, drop-off, vehicle class (Sedan, SUV, Hatchback) and immediate or scheduled dispatch.</span>
+      </div>
+      <span class="mono" style="font-size:11.5px;color:var(--muted)">Click any step or wait for auto-progression</span>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     11. CUSTOMER EXPERIENCE (Customer Journey & Mobile App Mockup)
+     ====================================================================== -->
+<section class="section section-alt" id="customer-experience" aria-labelledby="cust-title">
+  <div class="container">
+    <div class="section-head split">
+      <div style="display:grid;gap:18px">
+        <span class="eyebrow">Customer Journey</span>
+        <h2 class="h2" id="cust-title">Effortless for riders.<br>Branded for your business.</h2>
+      </div>
+      <p class="lead">Deliver a consumer-grade booking experience without Ola or Uber taking ownership of your riders. Every customer interacts directly with your brand while enjoying instant fares and live vehicle tracking.</p>
+    </div>
+
+    <!-- Journey Stepper -->
+    <div class="journey-bar" aria-label="Customer booking lifecycle">
+      <div class="journey-step active"><span class="journey-step-num">1</span><span>Search</span></div>
+      <span class="muted">→</span>
+      <div class="journey-step active"><span class="journey-step-num">2</span><span>Select Vehicle</span></div>
+      <span class="muted">→</span>
+      <div class="journey-step active"><span class="journey-step-num">3</span><span>Confirm Ride</span></div>
+      <span class="muted">→</span>
+      <div class="journey-step active"><span class="journey-step-num">4</span><span>Track Driver</span></div>
+      <span class="muted">→</span>
+      <div class="journey-step"><span class="journey-step-num">5</span><span>Start Trip</span></div>
+      <span class="muted">→</span>
+      <div class="journey-step"><span class="journey-step-num">6</span><span>Complete Trip</span></div>
+      <span class="muted">→</span>
+      <div class="journey-step"><span class="journey-step-num">7</span><span>Ride History</span></div>
+    </div>
+
+    <!-- Customer Experience Showcase Grid -->
+    <div class="experience-cols">
+      <!-- Phone Mockup -->
+      <div class="phone-mockup-large">
+        <div class="phone-screen">
+          <div class="phone-notch"></div>
+          <div class="p-status"><span>9:41</span><span>●●● ▮</span></div>
+          <div class="p-brandbar"><span class="p-brand"><i></i>CityRide Passenger</span><span class="p-av"></span></div>
+          <div class="p-map" style="height:280px"><canvas data-map="phone"></canvas></div>
+          <div class="p-sheet">
+            <div class="p-grab"></div>
+            <!-- Live Tabs from cityridetaxi.org -->
+            <div style="display:flex;background:var(--bg-2);border-radius:var(--r-sm);padding:3px;gap:3px;margin-bottom:10px;font-size:11px;font-weight:700;">
+              <span style="flex:1;text-align:center;padding:4px 0;background:var(--accent);color:#fff;border-radius:4px;">Local</span>
+              <span style="flex:1;text-align:center;padding:4px 0;color:var(--muted)">Outstation</span>
+              <span style="flex:1;text-align:center;padding:4px 0;color:var(--muted)">📦 Parcel</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <span class="p-title" style="margin:0;font-size:12.5px">Driver Arriving in 3 min</span>
+              <span class="pill ok" style="font-size:10px;padding:2px 8px;">1–12 Pax</span>
+            </div>
+            <div class="p-field" style="margin-top:8px"><i></i>Pickup: T2 Terminal (Live GPS Pin)</div>
+            <div class="p-field"><i class="sq"></i>Drop: Cyber Tech Park, Sector 4</div>
+            <div class="p-opt sel" style="margin-top:8px">
+              <span class="car"><svg class="icon icon-xs"><use href="#i-car"/></svg></span>
+              <span><b>Ravi Kumar · Sedan</b><small>VH-0142 · ★ 4.9 · WELCOME50 Applied</small></span>
+              <b class="num" style="color:var(--accent)">₹340</b>
+            </div>
+            <div style="display:flex;gap:8px;margin-top:10px;">
+              <div class="p-btn" style="flex:1;font-size:11px">Share Trip GPS</div>
+              <a href="https://cityridetaxi.org/" target="_blank" rel="noopener" class="p-btn" style="background:var(--accent);color:#fff;flex:1;font-size:11px;text-align:center;text-decoration:none;">Open Live App ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Details -->
+      <div style="display:grid;gap:20px">
+        <div class="cap">
+          <div class="cap-n"><b>01</b><span>3 TRIP CATEGORIES</span></div>
+          <h3>Local, Outstation &amp; Parcel Dispatch</h3>
+          <p>Full support for single/multi-stop city trips, cross-border outstation trips with round-trip toggle &amp; return date selection, and parcel delivery (<5kg Bike, 5-15kg Auto, 15-30kg Cab) with sender &amp; receiver contact verification.</p>
+        </div>
+        <div class="cap">
+          <div class="cap-n"><b>02</b><span>SMART MAP PICKER</span></div>
+          <h3>Live GPS Pinning &amp; Reverse Geocoding</h3>
+          <p>Integrated Leaflet and OpenStreetMap geocoding allows riders to drop accurate crosshair pins, detect live location with one tap, or autocomplete landmark addresses effortlessly.</p>
+        </div>
+        <div class="cap">
+          <div class="cap-n"><b>03</b><span>WALLET &amp; PDF INVOICES</span></div>
+          <h3>Promotions, In-App Wallet &amp; Receipts</h3>
+          <p>Instant coupon code discounts (e.g. WELCOME50), customer wallet balance recharge, transparent fare policy breakdown, and downloadable PDF trip invoices generated via jsPDF.</p>
+        </div>
+        <div>
+          <a class="live-badge-btn" href="https://cityridetaxi.org/" target="_blank" rel="noopener">Experience Live Rider App (cityridetaxi.org) ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     12. DRIVER EXPERIENCE (Driver Application Showcase)
+     ====================================================================== -->
+<section class="section" id="driver-experience" aria-labelledby="drv-title">
+  <div class="container">
+    <div class="section-head split">
+      <div style="display:grid;gap:18px">
+        <span class="eyebrow">Driver Experience</span>
+        <h2 class="h2" id="drv-title">Everything a driver needs,<br>from acceptance to trip completion.</h2>
+      </div>
+      <p class="lead">Built to empower drivers with a clean, low-distraction mobile application. Driver dashboard, ride acceptance countdowns, integrated turn-by-turn navigation, instant earnings summaries, and safety alerts.</p>
+    </div>
+
+    <div class="experience-cols">
+      <!-- Details Column -->
+      <div style="display:grid;gap:20px;">
+        <div class="cap" style="border-top:1px solid var(--line);padding-top:20px">
+          <h3>1. Driver Dashboard &amp; Radar Scanning Duty Toggle</h3>
+          <p>Instant Online/Offline toggle with active radar sweep animation. Real-time indicators of demand heatmaps, completed trips count, hours logged, and GPS lock indicator.</p>
+        </div>
+        <div class="cap">
+          <h3>2. 15-Second Ping Overlay with Audio Alert</h3>
+          <p>Fullscreen animated overlay with looping acoustic alert tone, SVG circular 15-second countdown timer, pickup/drop addresses, estimated net payout, and quick-action Accept/Reject controls.</p>
+        </div>
+        <div class="cap">
+          <h3>3. In-App Navigation &amp; Performance Rings</h3>
+          <p>One-touch navigation shortcuts to Google Maps &amp; Waze. Three visual performance rings continuously track Pilot Rating, Acceptance Rate, and Cancellation Rate.</p>
+        </div>
+        <div class="cap">
+          <h3>4. Transparent Wallet &amp; Instant Bank Payouts</h3>
+          <p>Real-time calculation of daily/weekly earnings, platform commission deductions, tips, and shift history with on-demand digital wallet withdrawal requests.</p>
+        </div>
+        <div>
+          <a class="live-badge-btn" href="https://cityridetaxi.org/driver.html" target="_blank" rel="noopener">Launch Live Driver Command Center ↗</a>
+        </div>
+      </div>
+
+      <!-- Phone Mockup for Driver -->
+      <div class="phone-mockup-large">
+        <div class="phone-screen">
+          <div class="phone-notch"></div>
+          <div class="p-status"><span>9:41</span><span>●●● ▮</span></div>
+          <div class="p-brandbar"><span class="p-brand"><i></i>CityRide Pilot</span><span class="pill ok"><span class="live-dot-pulse"></span> Online · Radar Active</span></div>
+          <div class="d-online">
+            <span>Today's Shift</span>
+            <span class="num" style="color:var(--accent)">₹2,340 · 7 trips · 98% Acceptance</span>
+          </div>
+          <div class="p-map" style="height:250px"><canvas data-map="phone-driver"></canvas></div>
+          <div class="d-req" style="margin:14px;border:1px solid var(--line);border-radius:var(--r-md);padding:14px;background:var(--surface);">
+            <div class="d-req-top" style="display:flex;justify-content:space-between;align-items:center">
+              <div>
+                <div class="p-title" style="font-size:1rem;margin:0">New Ride Request!</div>
+                <small class="muted">Sedan · 1.4 km to pickup · 15s Timer</small>
+              </div>
+              <svg class="ring" viewBox="0 0 30 30" style="width:28px;height:28px"><circle class="bg" cx="15" cy="15" r="13"/><circle class="fg" cx="15" cy="15" r="13"/></svg>
+            </div>
+            <div class="d-route" style="margin-top:10px;font-size:12.5px;display:grid;gap:6px;">
+              <div><i></i> <b>Pickup:</b> Terminal 2, Commercial Departure</div>
+              <div><i class="b"></i> <b>Destination:</b> Cyber Tech Park, Tower B</div>
+            </div>
+            <div class="d-earn" style="margin-top:10px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:8px;">
+              <span>Net Driver Payout</span>
+              <b class="num" style="font-size:1.1rem;color:var(--ok)">₹405.00</b>
+            </div>
+            <div class="d-actions" style="display:grid;grid-template-columns:1fr 1.6fr;gap:8px;margin-top:10px;">
+              <span class="no" style="text-align:center;padding:8px;border-radius:var(--r-sm);border:1px solid var(--line);cursor:pointer;font-size:12px;font-weight:600">Reject</span>
+              <a href="https://cityridetaxi.org/driver.html" target="_blank" rel="noopener" class="yes" style="text-align:center;padding:8px;border-radius:var(--r-sm);background:var(--accent);color:#fff;cursor:pointer;font-size:12px;font-weight:600;text-decoration:none;">Accept Ride ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     13. VENDOR MANAGEMENT (Enterprise Vendor Portal)
+     ====================================================================== -->
+<section class="section section-alt" id="vendor-management" aria-labelledby="vendor-title">
+  <div class="container">
+    <div class="section-head split">
+      <div style="display:grid;gap:18px">
+        <span class="eyebrow">Enterprise Vendor Portal</span>
+        <h2 class="h2" id="vendor-title">Turn vendor operations into a connected workflow.</h2>
+      </div>
+      <p class="lead">Transportation companies frequently rely on vehicle owners, sub-contractors, and third-party vendors. CityRideTaxi gives vendors their own dedicated portal to assign drivers, monitor trips, and track profit margins.</p>
+    </div>
+
+    <!-- Editorial Fleet Photo Banner -->
+    <div class="editorial-img-banner">
+      <img src="assets/img/fleet-operations.jpg" alt="NJJ Technologies enterprise fleet management and professional chauffeur mobility hub" loading="lazy">
+      <div class="editorial-img-overlay">
+        <div>
+          <span class="pill ok" style="margin-bottom:12px">Vendor Fleet Management</span>
+          <h3>Connected Vendor Fleet Infrastructure</h3>
+          <p>Empower fleet suppliers and taxi vendors with vehicle telemetry, driver verification, automated dispatch routing, and transparent profit settlements.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vendor Dispatch Workflow Visual -->
+    <div style="margin-top:36px;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--surface);padding:32px;">
+      <h3 style="font-size:1.125rem;letter-spacing:-0.01em;margin-bottom:16px;">Vendor Operational Lifecycle</h3>
+      <div class="auto-col" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+        <span class="trust-cap-pill"><svg class="icon icon-xs"><use href="#i-route"/></svg>1. Booking Inflow</span>
+        <span class="muted">→</span>
+        <span class="trust-cap-pill"><svg class="icon icon-xs"><use href="#i-vendor"/></svg>2. Vendor Allocation</span>
+        <span class="muted">→</span>
+        <span class="trust-cap-pill"><svg class="icon icon-xs"><use href="#i-idcard"/></svg>3. Driver Selection</span>
+        <span class="muted">→</span>
+        <span class="trust-cap-pill"><svg class="icon icon-xs"><use href="#i-check"/></svg>4. Acceptance</span>
+        <span class="muted">→</span>
+        <span class="trust-cap-pill"><svg class="icon icon-xs"><use href="#i-car"/></svg>5. Trip En Route</span>
+        <span class="muted">→</span>
+        <span class="trust-cap-pill"><svg class="icon icon-xs"><use href="#i-flag"/></svg>6. Completion</span>
+        <span class="muted">→</span>
+        <span class="trust-cap-pill"><svg class="icon icon-xs"><use href="#i-wallet"/></svg>7. Margin Settlement</span>
+      </div>
+
+      <!-- Vendor Portal Screen Preview -->
+      <div class="browser" style="margin-top:28px" aria-hidden="true">
+        <div class="b-bar">
+          <span class="b-dots"><i></i><i></i><i></i></span>
+          <span class="b-url"><svg class="icon icon-xs"><use href="#i-lock"/></svg>cityridetaxi.org/vendor.html</span>
+        </div>
+        <div class="b-body mini-app" style="min-height:280px">
+          <div class="mini-side">
+            <i class="on" title="Overview"></i>
+            <i title="Drivers"></i>
+            <i title="Vehicles"></i>
+            <i title="Payouts"></i>
+            <i title="Settings"></i>
+          </div>
+          <div class="mini-main">
+            <div class="mini-h">
+              <span>Partner Hub · Live Multi-Fleet Management Console</span>
+              <span class="pill ok"><span class="live-dot-pulse"></span> 38 Vehicles Online</span>
+            </div>
+            <div class="mini-kpis" style="grid-template-columns:repeat(4,minmax(0,1fr))">
+              <div class="mini-kpi"><small>Total Fleet</small><b class="num">42 Vehicles</b></div>
+              <div class="mini-kpi"><small>Active Trips</small><b class="num">17 Trips</b></div>
+              <div class="mini-kpi"><small>Today's Margin (15%)</small><b class="num">₹28,450</b></div>
+              <div class="mini-kpi"><small>Pending Payout</small><b class="num">₹1,12,000</b></div>
+            </div>
+            <div class="mini-table" style="margin-top:16px;">
+              <div class="mini-tr h" style="grid-template-columns:1fr 1fr 1fr 1fr 1fr">
+                <span>Vehicle</span><span>Driver</span><span>Route</span><span>Fare</span><span>Vendor Margin</span>
+              </div>
+              <div class="mini-tr" style="grid-template-columns:1fr 1fr 1fr 1fr 1fr">
+                <span class="mono">VH-0142 (Sedan)</span><span>Ravi K.</span><span>Airport → CBD</span><span class="num">₹540</span><span class="num" style="color:var(--ok)">₹81 (15%)</span>
+              </div>
+              <div class="mini-tr" style="grid-template-columns:1fr 1fr 1fr 1fr 1fr">
+                <span class="mono">VH-0087 (SUV)</span><span>Arjun M.</span><span>Tech Park → Station</span><span class="num">₹720</span><span class="num" style="color:var(--ok)">₹108 (15%)</span>
+              </div>
+              <div class="mini-tr" style="grid-template-columns:1fr 1fr 1fr 1fr 1fr">
+                <span class="mono">VH-0203 (EV)</span><span>Imran S.</span><span>Mall → Central Sq</span><span class="num">₹280</span><span class="num" style="color:var(--ok)">₹42 (15%)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:20px;display:flex;justify-content:flex-end;">
+        <a class="live-badge-btn" href="https://cityridetaxi.org/vendor.html" target="_blank" rel="noopener">Access Live Partner Hub (cityridetaxi.org/vendor.html) ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     14. ADMIN CONTROL CENTER (Enterprise Admin Dashboard)
+     ====================================================================== -->
+<section class="section ink dash-section" id="admin-control" aria-labelledby="dash-title">
+  <div class="container">
+    <div class="section-head split">
+      <div style="display:grid;gap:20px">
+        <span class="eyebrow">Enterprise Control Center</span>
+        <h2 class="h2" id="dash-title">Centralized Command for Your Entire Mobility Network.</h2>
+      </div>
+      <p class="lead">Complete operational authority over bookings, drivers, vehicles, vendors, tariffs, commissions, and customer accounts. Real-time visibility meets enterprise policy governance.</p>
+    </div>
+
+    <div class="dash-meta">
+      <span><svg class="icon icon-sm" style="color:var(--accent)"><use href="#i-pulse"/></svg>Sub-second live map updates</span>
+      <span><svg class="icon icon-sm" style="color:var(--accent)"><use href="#i-filter"/></svg>Multi-zone filtering</span>
+      <span><svg class="icon icon-sm" style="color:var(--accent)"><use href="#i-lock"/></svg>Role-based administrative permissions</span>
+      <a class="live-badge-btn" href="https://cityridetaxi.org/admin.html" target="_blank" rel="noopener" style="margin-left:auto;"><span class="live-dot-pulse"></span>Live Admin Portal (cityridetaxi.org/admin.html) ↗</a>
+    </div>
+
+    <!-- Enterprise Admin Dashboard Frame -->
+    <div class="dash-wrap">
+      <div class="dash-scroller" tabindex="0" aria-label="CityRideTaxi admin dashboard preview">
+        <div class="dash" id="dash">
+          <div class="dash-chrome">
+            <span class="b-dots"><i></i><i></i><i></i></span>
+            <span class="b-url"><svg class="icon icon-xs"><use href="#i-lock"/></svg>cityridetaxi.org/admin.html</span>
+          </div>
+
+          <div class="dash-app">
+            <!-- Full 14-Module Sidebar Navigation from cityridetaxi.org/admin.html -->
+            <aside class="side">
+              <div class="side-brand">
+                <span class="pm">
+                  <svg width="16" height="16" viewBox="0 0 28 28"><circle cx="8" cy="20" r="2.6" fill="none" stroke="currentColor" stroke-width="2.6"/><path d="M10.6 20H16a3.2 3.2 0 0 0 0-6.4h-4a3.2 3.2 0 0 1 0-6.4h5.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><circle cx="20.5" cy="7.2" r="2.8" fill="#3ccfc0"/></svg>
+                </span>
+                CityRide Admin
+              </div>
+
+              <div class="side-group">
+                <div class="side-label">Operations</div>
+                <a class="on"><svg class="icon"><use href="#i-grid"/></svg>Execution Overview</a>
+                <a><svg class="icon"><use href="#i-pulse"/></svg>Live Fleet Radar<span class="cnt">Live</span></a>
+                <a><svg class="icon"><use href="#i-route"/></svg>Mission Control<span class="cnt">128</span></a>
+              </div>
+
+              <div class="side-group">
+                <div class="side-label">Management</div>
+                <a><svg class="icon"><use href="#i-idcard"/></svg>Pilot Management<span class="cnt">98</span></a>
+                <a><svg class="icon"><use href="#i-wallet"/></svg>Wallet Registry</a>
+                <a><svg class="icon"><use href="#i-user"/></svg>Member Registry</a>
+                <a><svg class="icon"><use href="#i-vendor"/></svg>Network Partners<span class="cnt">5</span></a>
+                <a><svg class="icon"><use href="#i-users"/></svg>District Associations</a>
+              </div>
+
+              <div class="side-group">
+                <div class="side-label">Analytics &amp; Audit</div>
+                <a><svg class="icon"><use href="#i-chart"/></svg>Profit Ledger</a>
+                <a><svg class="icon"><use href="#i-sheet"/></svg>System Reports</a>
+                <a><svg class="icon"><use href="#i-eye"/></svg>Underground Level</a>
+                <a><svg class="icon"><use href="#i-car"/></svg>Vehicle Audit</a>
+                <a><svg class="icon"><use href="#i-pin"/></svg>District Audit</a>
+              </div>
+
+              <div class="side-group">
+                <div class="side-label">Configuration</div>
+                <a><svg class="icon"><use href="#i-fare"/></svg>Rate Tariffs</a>
+                <a><svg class="icon"><use href="#i-percent"/></svg>Promotional Offers</a>
+                <a><svg class="icon"><use href="#i-sliders"/></svg>System Settings</a>
+                <a><svg class="icon"><use href="#i-wallet"/></svg>Profit Deductions</a>
+              </div>
+
+              <div class="side-foot">
+                <span class="av">NJJ</span>
+                <span>Operations Director<small>Super Administrator</small></span>
+              </div>
+            </aside>
+
+            <!-- Dashboard Main Content -->
+            <div class="dmain">
+              <div class="topbar">
+                <div class="search"><svg class="icon icon-sm"><use href="#i-search"/></svg>Search trips, driver IDs, vehicle plates, vendor accounts…<kbd>/</kbd></div>
+                <div class="tb-right">
+                  <span class="selectish"><svg class="icon icon-xs"><use href="#i-pin"/></svg>All Metro Zones<svg class="icon icon-xs"><use href="#i-chev"/></svg></span>
+                  <span class="selectish"><svg class="icon icon-xs"><use href="#i-cal"/></svg>Today<svg class="icon icon-xs"><use href="#i-chev"/></svg></span>
+                  <span class="tb-icon"><svg class="icon icon-sm"><use href="#i-bell"/></svg><span class="dot"></span></span>
+                </div>
+              </div>
+
+              <div class="dcontent">
+                <div class="dhead">
+                  <div>
+                    <h4>Network Operations Center</h4>
+                    <p><span class="live" style="margin-right:6px">Live Sync</span>Active fleet telemetry · 4 zones</p>
+                  </div>
+                  <div class="filters">
+                    <span class="seg"><span class="on">Today</span><span>7D</span><span>30D</span></span>
+                    <span class="selectish"><svg class="icon icon-xs"><use href="#i-filter"/></svg>Filters · Active</span>
+                    <span class="selectish"><svg class="icon icon-xs"><use href="#i-export"/></svg>Export CSV</span>
+                  </div>
+                </div>
+
+                <!-- 8 Specific Metrics from Section 14 -->
+                <div class="kpis" style="grid-template-columns: repeat(4, minmax(0, 1fr));">
+                  <div class="kpi"><span class="lbl">Total Bookings</span><span class="val num">1,284</span><span class="sub">Completed &amp; in-progress</span></div>
+                  <div class="kpi"><span class="lbl">Active Trips <span class="live">Live</span></span><span class="val num" id="kpiActive">46</span><span class="sub">20 en route · 26 arriving</span></div>
+                  <div class="kpi"><span class="lbl">Drivers Online</span><span class="val num">98</span><span class="sub">76 ready for instant dispatch</span></div>
+                  <div class="kpi"><span class="lbl">Vehicles Active</span><span class="val num">138</span><span class="sub">Sedan, SUV, EV, Hatchback</span></div>
+                  <div class="kpi"><span class="lbl">Gross Revenue</span><span class="val num">₹4,86,200</span><span class="sub">Total fares today</span></div>
+                  <div class="kpi"><span class="lbl">Platform Commission</span><span class="val num">₹48,620</span><span class="sub">10% retained revenue</span></div>
+                  <div class="kpi"><span class="lbl">Vendor Performance</span><span class="val num">98.4%</span><span class="sub">Average SLA fulfillment</span></div>
+                  <div class="kpi"><span class="lbl">Driver Acceptance</span><span class="val num">94.8%</span><span class="sub">Under 12s response rate</span></div>
+                </div>
+
+                <!-- Panels: Live Map + Ride Status -->
+                <div class="row2">
+                  <div class="panel">
+                    <div class="panel-h"><h5>Live Operations Map</h5><span class="muted">46 active rides · 98 drivers online</span></div>
+                    <div class="live-map">
+                      <canvas data-map="live"></canvas>
+                      <div class="map-legend">
+                        <span><i style="background:var(--accent)"></i>On trip</span>
+                        <span><i style="background:var(--info)"></i>To pickup</span>
+                        <span><i style="background:#9aa5a8"></i>Available</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="panel">
+                    <div class="panel-h"><h5>Trip Lifecycle Distribution</h5><span class="muted">46 active trips</span></div>
+                    <div class="panel-b">
+                      <div class="stack-bar">
+                        <i style="flex:6;background:var(--warn)"></i>
+                        <i style="flex:9;background:#7aa7e6"></i>
+                        <i style="flex:11;background:var(--info)"></i>
+                        <i style="flex:20;background:var(--accent)"></i>
+                      </div>
+                      <div class="legend-grid">
+                        <div class="legend-item"><span><i style="background:var(--warn)"></i>Searching</span><b class="num">6</b></div>
+                        <div class="legend-item"><span><i style="background:#7aa7e6"></i>Assigned</span><b class="num">9</b></div>
+                        <div class="legend-item"><span><i style="background:var(--info)"></i>Arriving</span><b class="num">11</b></div>
+                        <div class="legend-item"><span><i style="background:var(--accent)"></i>En Route</span><b class="num">20</b></div>
+                      </div>
+                      <div style="margin-top:16px;padding-top:12px;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-size:11.5px">
+                        <span class="muted">Average Pickup ETA</span>
+                        <b class="num" style="color:var(--accent)">5.8 min</b>
+                      </div>
+                      <div style="margin-top:8px;display:flex;justify-content:space-between;font-size:11.5px">
+                        <span class="muted">Unassigned &gt; 2 min</span>
+                        <span class="pill ok">0 trips pending</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Recent Bookings Table -->
+                <div class="row4" style="grid-template-columns: minmax(0, 1fr);">
+                  <div class="panel">
+                    <div class="panel-h"><h5>Recent Network Bookings</h5><span class="muted">Audited realtime stream</span></div>
+                    <div style="overflow-x:auto">
+                      <table class="table">
+                        <thead>
+                          <tr><th>Booking ID</th><th>Customer</th><th>Route</th><th>Vehicle</th><th>Driver</th><th>Vendor</th><th style="text-align:right">Fare</th><th>Status</th></tr>
+                        </thead>
+                        <tbody>
+                          <tr><td class="id">CR-20418</td><td>Priya S.</td><td><span class="route">Terminal 2<svg class="icon"><use href="#i-arrow"/></svg>CBD</span></td><td>Executive Sedan</td><td>Ravi K.</td><td>North Fleet</td><td class="num" style="text-align:right">₹540</td><td><span class="pill acc">On trip</span></td></tr>
+                          <tr><td class="id">CR-20417</td><td>Karan M.</td><td><span class="route">Tech Park<svg class="icon"><use href="#i-arrow"/></svg>Railway Stn</span></td><td>SUV Premium</td><td>Arjun M.</td><td>Airport Line</td><td class="num" style="text-align:right">₹720</td><td><span class="pill info">Arriving</span></td></tr>
+                          <tr><td class="id">CR-20416</td><td>Neha R.</td><td><span class="route">Old Town<svg class="icon"><use href="#i-arrow"/></svg>Airport</span></td><td>Sedan</td><td>Imran S.</td><td>Central Fleet</td><td class="num" style="text-align:right">₹860</td><td><span class="pill acc">On trip</span></td></tr>
+                          <tr><td class="id">CR-20415</td><td>Aman T.</td><td><span class="route">Harbour Rd<svg class="icon"><use href="#i-arrow"/></svg>City Mall</span></td><td>Hatchback</td><td>Suresh P.</td><td>Independent</td><td class="num" style="text-align:right">₹310</td><td><span class="pill ok">Completed</span></td></tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     15. FARE & PRICING ENGINE (Interactive Rule Simulator)
+     ====================================================================== -->
+<section class="section" id="pricing-engine" aria-labelledby="fare-title">
+  <div class="container">
+    <div class="section-head split">
+      <div style="display:grid;gap:18px">
+        <span class="eyebrow">Pricing Engine</span>
+        <h2 class="h2" id="fare-title">Pricing built around your business rules.</h2>
+      </div>
+      <p class="lead">Every mobility company operates under different economics. CityRideTaxi supports configurable fare structures: base tariffs, distance tiers, peak surge multipliers, airport levies, GST, and customized driver/vendor commission splits.</p>
+    </div>
+
+    <!-- Interactive Pricing Configuration Simulator -->
+    <div class="pricing-sim">
+      <div class="pricing-controls">
+        <h3 style="font-size:1.125rem;letter-spacing:-0.01em;">Configure Fare Parameters</h3>
+
+        <div class="field">
+          <label for="fareVehicle">Vehicle Type</label>
+          <select class="select" id="fareVehicle">
+            <option value="sedan" selected>Sedan (Base ₹60, ₹14/km)</option>
+            <option value="suv">SUV (Base ₹90, ₹19/km)</option>
+            <option value="hatchback">Hatchback (Base ₹45, ₹11/km)</option>
+            <option value="premium">Executive Premium (Base ₹120, ₹26/km)</option>
+            <option value="electric">Electric Mobility (Base ₹70, ₹15/km)</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="fareCategory">Trip Category</label>
+          <select class="select" id="fareCategory">
+            <option value="city" selected>Standard City Ride</option>
+            <option value="airport">Airport Transfer (+₹80 Toll/Parking)</option>
+            <option value="outstation">Inter-City Outstation (Min 130 km + Driver Betta ₹400)</option>
+            <option value="hillstation">Hill Station Route (+₹400 Terrain Surcharge)</option>
+            <option value="parcel">📦 Parcel Courier Delivery</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="fareDistance">Trip Distance: <b id="fareDistanceVal" style="color:var(--accent)">12 km</b></label>
+          <input type="range" id="fareDistance" min="2" max="280" value="12" step="1" style="width:100%;accent-color:var(--accent)">
+        </div>
+
+        <div class="field">
+          <label for="fareSurge">Demand &amp; Peak Multiplier</label>
+          <select class="select" id="fareSurge">
+            <option value="1.0" selected>1.0x — Standard Demand</option>
+            <option value="1.25">1.25x — Moderate Rain / Peak</option>
+            <option value="1.5">1.50x — High Demand Rush Hour</option>
+            <option value="2.0">2.00x — Midnight / Festival Peak</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Real-Time Calculation Output Card -->
+      <div class="pricing-output">
+        <div>
+          <span class="eyebrow plain" style="margin-bottom:8px">Audited Fare Breakdown</span>
+          <h4 style="font-size:1.25rem;letter-spacing:-0.02em;margin-bottom:16px;">Automated Split Ledger</h4>
+
+          <div class="fare-calc-row">
+            <span>Base Fare</span>
+            <b class="num" id="outBaseFare">₹60</b>
+          </div>
+          <div class="fare-calc-row">
+            <span>Distance Cost</span>
+            <b class="num" id="outDistFare">₹168</b>
+          </div>
+          <div class="fare-calc-row">
+            <span>Surge Rate</span>
+            <b class="num" id="outSurge">1.0x (Standard)</b>
+          </div>
+          <div class="fare-calc-row">
+            <span>Applicable GST (5%)</span>
+            <b class="num" id="outGst">₹11</b>
+          </div>
+          <div class="fare-calc-row total">
+            <span>Passenger Final Fare</span>
+            <b class="num" id="outTotalFare" style="color:var(--accent)">₹239</b>
+          </div>
+        </div>
+
+        <div style="background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;font-size:12px;display:grid;gap:6px;">
+          <div style="font-weight:600;font-family:var(--font-mono);text-transform:uppercase;color:var(--muted)">Automatic Revenue Split</div>
+          <div style="display:flex;justify-content:space-between"><span>Platform Cut (10%):</span><b class="num" id="outCommission">₹24</b></div>
+          <div style="display:flex;justify-content:space-between"><span>Vendor Margin (15%):</span><b class="num" id="outVendorShare">₹36</b></div>
+          <div style="display:flex;justify-content:space-between"><span>Driver Payout (75%):</span><b class="num" id="outDriverShare" style="color:var(--ok)">₹179</b></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live Operating Policy Matrix from cityridetaxi.org -->
+    <div style="margin-top:36px;border-top:1px solid var(--line);padding-top:28px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:8px;">
+        <span class="eyebrow plain" style="margin:0"><span class="live-dot-pulse"></span> Active Platform Tariff Rules · cityridetaxi.org</span>
+        <span class="tag neutral">Automated Rule Engine</span>
+      </div>
+      <h3 style="font-size:1.25rem;letter-spacing:-0.01em;margin-bottom:6px;">Live Production Operational Policies</h3>
+      <p style="color:var(--muted);font-size:0.875rem;max-width:760px;margin-bottom:20px;">CityRideTaxi runs with configurable, enterprise-compliant business policies programmed directly into the dispatch and billing pipeline:</p>
+
+      <div class="tariff-policy-grid">
+        <div class="tariff-policy-card">
+          <div class="tp-title"><svg class="icon icon-xs" style="color:var(--accent)"><use href="#i-idcard"/></svg> Driver Betta Allowance</div>
+          <div class="tp-val">₹400 / ₹600</div>
+          <div class="tp-desc">Flat ₹400 standard night/day betta allowance; automatically increases to ₹600 on long trips exceeding 250 kms.</div>
+        </div>
+
+        <div class="tariff-policy-card">
+          <div class="tp-title"><svg class="icon icon-xs" style="color:var(--accent)"><use href="#i-route"/></svg> Outstation One-Way Trips</div>
+          <div class="tp-val">Min 130 km</div>
+          <div class="tp-desc">Guaranteed 130 km minimum running fare automatically applied on one-way drop trips across city boundaries.</div>
+        </div>
+
+        <div class="tariff-policy-card">
+          <div class="tp-title"><svg class="icon icon-xs" style="color:var(--accent)"><use href="#i-pulse"/></svg> Hill Station Surcharge</div>
+          <div class="tp-val">₹400 Extra</div>
+          <div class="tp-desc">Automated terrain detection adds ₹400 surcharge for high-altitude routes requiring elevated vehicle effort.</div>
+        </div>
+
+        <div class="tariff-policy-card">
+          <div class="tp-title"><svg class="icon icon-xs" style="color:var(--accent)"><use href="#i-sliders"/></svg> Dynamic Waiting Policy</div>
+          <div class="tp-val">₹2 / min</div>
+          <div class="tp-desc">Generous free waiting allowance calculated as (Distance × 2 min). Billed transparently at ₹2/min thereafter.</div>
+        </div>
+
+        <div class="tariff-policy-card">
+          <div class="tp-title"><svg class="icon icon-xs" style="color:var(--accent)"><use href="#i-car"/></svg> Luggage Capacity Rules</div>
+          <div class="tp-val">2 – 3 Bags</div>
+          <div class="tp-desc">Enforced maximum capacity: Sedan allows up to 2 suitcases; SUV accommodates up to 3 full-sized suitcases.</div>
+        </div>
+
+        <div class="tariff-policy-card">
+          <div class="tp-title"><svg class="icon icon-xs" style="color:var(--accent)"><use href="#i-fare"/></svg> Additional Levies</div>
+          <div class="tp-val">Pass-Through</div>
+          <div class="tp-desc">Toll Plaza fees, Inter-State permits, airport pickup surcharges, and parking receipts audited and itemized on the final invoice.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     16. ANALYTICS (Data-Driven Operational Intelligence)
+     ====================================================================== -->
+<section class="section section-alt" id="analytics" aria-labelledby="analytics-title">
+  <div class="container">
+    <div class="section-head split">
+      <div style="display:grid;gap:18px">
+        <span class="eyebrow">Operational Intelligence</span>
+        <h2 class="h2" id="analytics-title">Turn every trip into operational intelligence.</h2>
+      </div>
+      <p class="lead">CityRideTaxi automatically structures raw GPS and transaction events into high-level business metrics: booking conversion rates, fleet utilization, driver attendance, and vendor margin efficiency.</p>
+    </div>
+
+    <!-- Analytics KPI Cards -->
+    <div class="kpis" style="grid-template-columns: repeat(4, minmax(0, 1fr));margin-bottom:32px;">
+      <div class="kpi">
+        <span class="lbl">Trip Fulfillment Rate</span>
+        <span class="val num">96.8%</span>
+        <span class="sub">+1.4% vs industry baseline</span>
+      </div>
+      <div class="kpi">
+        <span class="lbl">Fleet Utilization</span>
+        <span class="val num">84.2%</span>
+        <span class="sub">Hours with passenger onboard</span>
+      </div>
+      <div class="kpi">
+        <span class="lbl">Vendor Payout Cycle</span>
+        <span class="val num">T+0</span>
+        <span class="sub">Shift-based instant settlement</span>
+      </div>
+      <div class="kpi">
+        <span class="lbl">Customer Retention</span>
+        <span class="val num">72.4%</span>
+        <span class="sub">30-day repeat booking rate</span>
+      </div>
+    </div>
+
+    <!-- Revenue & Trips Chart Container -->
+    <div class="panel" style="background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:24px;box-shadow:var(--e-2);">
+      <div class="panel-h" style="border:none;padding:0 0 16px 0;">
+        <h5>Network Gross Revenue &amp; Completed Trips (Last 7 Days)</h5>
+        <span class="chart-legend"><span><i></i>Current Week</span><span><i class="p"></i>Prior Period</span></span>
+      </div>
+      <div class="panel-b" style="padding:0">
+        <svg class="chart" id="revChart" viewBox="0 0 520 190" preserveAspectRatio="none" role="img" aria-label="Line chart of daily gross fares"></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     17. SECURITY & RELIABILITY (Premium Dark Section)
+     ====================================================================== -->
+<section class="section ink" id="security" aria-labelledby="sec-title">
+  <div class="container">
+    <div class="section-head split">
+      <div style="display:grid;gap:18px">
+        <span class="eyebrow" style="color:var(--ink-accent)">Security &amp; Reliability</span>
+        <h2 class="h2" id="sec-title" style="color:var(--ink-fg)">Built for reliable mobility operations.</h2>
+      </div>
+      <p class="lead" style="color:var(--ink-muted)">Mission-critical transportation platforms require resilient infrastructure. CityRideTaxi delivers multi-tenant data isolation, role-based governance, and hardened communication channels.</p>
+    </div>
+
+    <div class="security-grid">
+      <div class="security-card">
+        <div class="icon-box"><svg class="icon"><use href="#i-shield"/></svg></div>
+        <h4>Secure Authentication</h4>
+        <p>Two-factor authentication, biometric logins for mobile devices, and cryptographically signed session tokens.</p>
+      </div>
+      <div class="security-card">
+        <div class="icon-box"><svg class="icon"><use href="#i-lock"/></svg></div>
+        <h4>Role-Based Access</h4>
+        <p>Granular privilege separation ensuring dispatchers, vendors, and support staff only access authorized data.</p>
+      </div>
+      <div class="security-card">
+        <div class="icon-box"><svg class="icon"><use href="#i-sliders"/></svg></div>
+        <h4>Operational Controls</h4>
+        <p>Emergency dispatch kill-switches, manual tariff locking, and mandatory vehicle compliance roadblocks.</p>
+      </div>
+      <div class="security-card">
+        <div class="icon-box"><svg class="icon"><use href="#i-db"/></svg></div>
+        <h4>Data Isolation</h4>
+        <p>Isolated data partitions preventing vendor cross-visibility while maintaining strict proprietary ownership.</p>
+      </div>
+      <div class="security-card">
+        <div class="icon-box"><svg class="icon"><use href="#i-pulse"/></svg></div>
+        <h4>Real-Time Communication</h4>
+        <p>Encrypted WebSockets delivering sub-second location pings with automatic HTTP long-polling fallback.</p>
+      </div>
+      <div class="security-card">
+        <div class="icon-box"><svg class="icon"><use href="#i-scale"/></svg></div>
+        <h4>Scalable Architecture</h4>
+        <p>Stateless microservices architecture engineered to horizontally scale across multiple regional cloud clusters.</p>
+      </div>
+      <div class="security-card">
+        <div class="icon-box"><svg class="icon"><use href="#i-eye"/></svg></div>
+        <h4>Telemetry Monitoring</h4>
+        <p>Real-time anomaly detection identifying route deviations, uncharacteristic stops, and fare tampering.</p>
+      </div>
+      <div class="security-card">
+        <div class="icon-box"><svg class="icon"><use href="#i-sheet"/></svg></div>
+        <h4>Audit-Friendly Workflows</h4>
+        <p>Every assignment, fare alteration, and payout generates an immutable transaction record for accounting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     18. WHITE-LABEL PLATFORM (Brand Preview Customizer)
+     ====================================================================== -->
+<section class="section section-alt" id="white-label" aria-labelledby="wl-title">
+  <div class="container">
+    <div class="section-head split">
+      <div style="display:grid;gap:20px">
+        <span class="eyebrow">White-Label Deployment</span>
+        <h2 class="h2" id="wl-title">Your mobility business.<br>Your brand. Your platform.</h2>
+      </div>
+      <p class="lead">CityRideTaxi powers your operations while allowing you to operate under your own business identity. Customer apps, driver apps, vendor portals, and public booking websites carry your name, brand colors, and domain.</p>
+    </div>
+
+    <!-- Formula Ribbon -->
+    <div style="display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:36px;font-size:1.125rem;font-weight:600;flex-wrap:wrap;">
+      <span class="pill ok" style="font-size:13px;padding:6px 14px;">Your Brand Identity</span>
+      <span>+</span>
+      <span class="pill acc" style="font-size:13px;padding:6px 14px;">CityRideTaxi Technology</span>
+      <span>=</span>
+      <span class="pill info" style="font-size:13px;padding:6px 14px;">Your Enterprise Mobility Platform</span>
+    </div>
+
+    <div class="wl">
+      <form class="wl-panel" id="wlPanel" onsubmit="return false" aria-label="Interactive Brand customizer">
+        <h3>Customize Brand <span class="tag neutral">Live Preview</span></h3>
+        <div class="field">
+          <label for="wlName">Your Company / Brand Name</label>
+          <input class="input" id="wlName" maxlength="18" value="CityRideTaxi" autocomplete="off">
+        </div>
+        <div class="field">
+          <span class="flabel" id="wlColorLbl">Brand Accent Color</span>
+          <div class="swatches" role="group" aria-labelledby="wlColorLbl">
+            <button type="button" class="swatch" style="background:#0b7a73" data-color="#0b7a73" aria-pressed="true" aria-label="Electric Teal"></button>
+            <button type="button" class="swatch" style="background:#2b59c3" data-color="#2b59c3" aria-pressed="false" aria-label="Cobalt Blue"></button>
+            <button type="button" class="swatch" style="background:#1a8f55" data-color="#1a8f55" aria-pressed="false" aria-label="Emerald Green"></button>
+            <button type="button" class="swatch" style="background:#b7791f" data-color="#b7791f" aria-pressed="false" aria-label="Amber Orange"></button>
+            <button type="button" class="swatch" style="background:#22272b" data-color="#22272b" aria-pressed="false" aria-label="Dark Graphite"></button>
+          </div>
+        </div>
+        <div class="field">
+          <span class="flabel">White-Label Deployment</span>
+          <span class="hint">One unified brand configuration propagated across Passenger App, Driver App, Vendor Portal, Admin Suite, and Booking Website.</span>
+        </div>
+        <div style="margin-top:12px;">
+          <button type="button" class="btn btn-primary" data-open-modal="whitelabel" style="width:100%">Build Your Mobility Platform</button>
+        </div>
+      </form>
+
+      <div class="wl-stage" id="wlStage">
+        <!-- Business Website Preview -->
+        <div class="wl-web">
+          <div class="wl-caption">Branded Public Website</div>
+          <div class="browser">
+            <div class="b-bar"><span class="b-dots"><i></i><i></i><i></i></span><span class="b-url"><svg class="icon icon-xs"><use href="#i-lock"/></svg><span data-wl-domain>cityridetaxi.org</span></span></div>
+            <div class="b-body">
+              <div class="site-nav"><span class="p-brand"><i></i><span data-wl-name>CityRideTaxi</span></span><span class="links"><span>Rides</span><span>Airport</span><span>Business</span></span><span class="b">Book Online</span></div>
+              <div class="site-hero">
+                <div><div class="site-h">Premium city transportation, booked in seconds.</div><div class="site-p">Transparent fares. Verified drivers. Real-time tracking.</div></div>
+                <div class="site-book"><div class="p-field"><i></i>Airport Terminal 2</div><div class="p-field"><i class="sq"></i>Financial District</div><div class="p-btn">View Fares</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Customer App Preview -->
+        <div class="wl-cust">
+          <div class="wl-caption">Customer App</div>
+          <div class="phone">
+            <div class="phone-screen">
+              <div class="phone-notch"></div>
+              <div class="p-status"><span>9:41</span><span>●●● ▮</span></div>
+              <div class="p-brandbar"><span class="p-brand"><i></i><span data-wl-name>CityRideTaxi</span></span><span class="p-av"></span></div>
+              <div class="p-map"><canvas data-map="wl-cust"></canvas></div>
+              <div class="p-sheet">
+                <div class="p-grab"></div>
+                <div class="p-title">Driver arriving in 3 min</div>
+                <div class="p-opt sel"><span class="car"><svg class="icon icon-xs"><use href="#i-car"/></svg></span><span><b>Ravi K. · Sedan</b><small>Plate: VH-0142</small></span><b>★ 4.9</b></div>
+                <div class="p-btn">Share My Trip</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Driver App Preview -->
+        <div class="wl-drv">
+          <div class="wl-caption">Driver App</div>
+          <div class="phone">
+            <div class="phone-screen">
+              <div class="phone-notch"></div>
+              <div class="p-status"><span>9:41</span><span>●●● ▮</span></div>
+              <div class="p-brandbar"><span class="p-brand"><i></i><span data-wl-name>CityRideTaxi</span></span><span class="pill ok">Online</span></div>
+              <div class="p-map"><canvas data-map="wl-drv"></canvas>
+                <div class="d-req">
+                  <div class="d-req-top"><div class="p-title">Pickup in 3 min</div><span class="pill info">En route</span></div>
+                  <div class="d-route"><i></i><span>Terminal 2, Arrivals</span><i class="b"></i><span>Financial District</span></div>
+                  <div class="d-actions" style="grid-template-columns:1fr"><span class="yes">Arrived at Pickup</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Admin Dashboard Preview -->
+        <div class="wl-admin">
+          <div class="wl-caption">Admin Dashboard</div>
+          <div class="browser">
+            <div class="b-bar"><span class="b-dots"><i></i><i></i><i></i></span><span class="b-url"><svg class="icon icon-xs"><use href="#i-lock"/></svg><span>admin.<span data-wl-domain>cityridetaxi.org</span></span></span></div>
+            <div class="b-body mini-app">
+              <div class="mini-side"><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="mini-main">
+                <div class="mini-h"><span class="p-brand"><i></i><span data-wl-name>CityRideTaxi</span> · Operations</span><span class="pill ok">Live</span></div>
+                <div class="mini-kpis">
+                  <div class="mini-kpi"><small>Total Rides</small><b class="num">1,284</b></div>
+                  <div class="mini-kpi"><small>Active Fleet</small><b class="num">46</b></div>
+                  <div class="mini-kpi"><small>Drivers</small><b class="num">98</b></div>
+                  <div class="mini-kpi"><small>Vendors</small><b class="num">5</b></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     19. USE CASES (8 Dedicated Cards)
+     ====================================================================== -->
+<section class="section" id="use-cases" aria-labelledby="use-title">
+  <div class="container">
+    <div class="section-head split">
+      <div style="display:grid;gap:18px">
+        <span class="eyebrow">Industry Solutions</span>
+        <h2 class="h2" id="use-title">Built for modern mobility businesses.</h2>
+      </div>
+      <p class="lead">From citywide taxi networks to specialized corporate fleets, CityRideTaxi adapts to the unique operational workflows, dispatch logic, and tariff rules of your transportation sector.</p>
+    </div>
+
+    <div class="use-cases-grid">
+      <!-- 1. Taxi Operators -->
+      <a class="use-case-card" href="#contact" data-focus-form>
+        <div>
+          <div class="icon-box"><svg class="icon"><use href="#i-car"/></svg></div>
+          <h3>Taxi Operators</h3>
+          <p>Digitize traditional call-and-meter operations with white-label passenger and driver apps, automated dispatch, and card/cash fare reconciliation.</p>
+        </div>
+        <span class="cta-link">Explore Solution <svg class="icon icon-xs"><use href="#i-arrow"/></svg></span>
+      </a>
+
+      <!-- 2. Fleet Owners -->
+      <a class="use-case-card" href="#contact" data-focus-form>
+        <div>
+          <div class="icon-box"><svg class="icon"><use href="#i-sliders"/></svg></div>
+          <h3>Fleet Owners</h3>
+          <p>Maximize vehicle utilization across owned fleets, manage driver shifts, prevent unauthorized vehicle use, and track fuel/maintenance costs.</p>
+        </div>
+        <span class="cta-link">Explore Solution <svg class="icon icon-xs"><use href="#i-arrow"/></svg></span>
+      </a>
+
+      <!-- 3. Travel Companies -->
+      <a class="use-case-card" href="#contact" data-focus-form>
+        <div>
+          <div class="icon-box"><svg class="icon"><use href="#i-globe"/></svg></div>
+          <h3>Travel Companies</h3>
+          <p>Provide reliable tourist transfers, fixed-route sightseeing, and outstation holiday travel packages with guaranteed vehicle standards.</p>
+        </div>
+        <span class="cta-link">Explore Solution <svg class="icon icon-xs"><use href="#i-arrow"/></svg></span>
+      </a>
+
+      <!-- 4. Corporate Transportation -->
+      <a class="use-case-card" href="#contact" data-focus-form>
+        <div>
+          <div class="icon-box"><svg class="icon"><use href="#i-case"/></svg></div>
+          <h3>Corporate Transportation</h3>
+          <p>Automate employee commute shuttles, executive airport runs, department cost-center billing, and verified roster compliance.</p>
+        </div>
+        <span class="cta-link">Explore Solution <svg class="icon icon-xs"><use href="#i-arrow"/></svg></span>
+      </a>
+
+      <!-- 5. Airport Transfers -->
+      <a class="use-case-card" href="#contact" data-focus-form>
+        <div>
+          <div class="icon-box"><svg class="icon"><use href="#i-plane"/></svg></div>
+          <h3>Airport Transfers</h3>
+          <p>Manage terminal queuing, flight-tracking delays, luggage capacity classification, pre-booked arrivals, and fixed airport corridor tariffs.</p>
+        </div>
+        <span class="cta-link">Explore Solution <svg class="icon icon-xs"><use href="#i-arrow"/></svg></span>
+      </a>
+
+      <!-- 6. Mobility Startups -->
+      <a class="use-case-card" href="#contact" data-focus-form>
+        <div>
+          <div class="icon-box"><svg class="icon"><use href="#i-rocket"/></svg></div>
+          <h3>Mobility Startups</h3>
+          <p>Launch a connected mobility brand in weeks instead of years without spending millions building backend dispatch from scratch.</p>
+        </div>
+        <span class="cta-link">Explore Solution <svg class="icon icon-xs"><use href="#i-arrow"/></svg></span>
+      </a>
+
+      <!-- 7. Transportation Associations -->
+      <a class="use-case-card" href="#contact" data-focus-form>
+        <div>
+          <div class="icon-box"><svg class="icon"><use href="#i-users"/></svg></div>
+          <h3>Transportation Associations</h3>
+          <p>Unite independent regional taxi unions and cooperative driver associations under a shared digital dispatch infrastructure.</p>
+        </div>
+        <span class="cta-link">Explore Solution <svg class="icon icon-xs"><use href="#i-arrow"/></svg></span>
+      </a>
+
+      <!-- 8. Regional Taxi Networks -->
+      <a class="use-case-card" href="#contact" data-focus-form>
+        <div>
+          <div class="icon-box"><svg class="icon"><use href="#i-route"/></svg></div>
+          <h3>Regional Taxi Networks</h3>
+          <p>Link multi-city taxi hubs with inter-district routing, shared booking pipelines, and inter-operator revenue clearinghouses.</p>
+        </div>
+        <span class="cta-link">Explore Solution <svg class="icon icon-xs"><use href="#i-arrow"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     20. PRODUCT ARCHITECTURE (Technical Architecture Visualization)
+     ====================================================================== -->
+<section class="section ink tech" id="architecture" aria-labelledby="arch-title">
+  <div class="tech-bg"></div>
+  <div class="container" style="position:relative">
+    <div class="section-head split">
+      <div style="display:grid;gap:20px">
+        <span class="eyebrow" style="color:var(--ink-accent)">Product Architecture</span>
+        <h2 class="h2" id="arch-title" style="color:var(--ink-fg)">Scalable Engineering for Real-Time Operations.</h2>
+      </div>
+      <p class="lead" style="color:var(--ink-muted)">Engineered for high concurrent throughput, fault-tolerant telemetry, and clean operational isolation between frontend interfaces and transactional databases.</p>
+    </div>
+
+    <!-- Technical Architecture Layers -->
+    <div class="arch-wrap">
+      <div class="arch">
+        <!-- Layer 1: Client Interfaces -->
+        <div class="arch-row">
+          <div class="arch-label"><b>Client Applications</b><span>Access tier</span></div>
+          <div class="arch-lane">
+            <div class="arch-cells" style="grid-template-columns:repeat(4,minmax(0,1fr))">
+              <div class="arch-cell"><svg class="icon"><use href="#i-user"/></svg>Customer Apps (iOS / Android)</div>
+              <div class="arch-cell"><svg class="icon"><use href="#i-idcard"/></svg>Driver Apps (iOS / Android)</div>
+              <div class="arch-cell"><svg class="icon"><use href="#i-vendor"/></svg>Vendor Portal (Web)</div>
+              <div class="arch-cell"><svg class="icon"><use href="#i-grid"/></svg>Admin Control Suite (Web)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Layer 2: API & Gateway -->
+        <div class="arch-row">
+          <div class="arch-label"><b>API &amp; Application Layer</b><span>Gateway &amp; Security</span></div>
+          <div class="arch-lane">
+            <div class="arch-cells">
+              <div class="arch-cell wide"><svg class="icon"><use href="#i-layers"/></svg>Unified API Gateway · JWT Authentication · Load Balancers · SSL Termination · Webhook Bridges</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Layer 3: Real-Time Operations -->
+        <div class="arch-row">
+          <div class="arch-label"><b>Real-Time Operations</b><span>Telemetry engine</span></div>
+          <div class="arch-lane">
+            <div class="arch-cells" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+              <div class="arch-cell" data-arch><svg class="icon"><use href="#i-pulse"/></svg>WebSocket Event Pub/Sub</div>
+              <div class="arch-cell" data-arch><svg class="icon"><use href="#i-pin"/></svg>Geospatial Indexing &amp; Routing</div>
+              <div class="arch-cell" data-arch><svg class="icon"><use href="#i-bell"/></svg>Push Notification Dispatch</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Layer 4: Business Logic -->
+        <div class="arch-row">
+          <div class="arch-label"><b>Business Logic</b><span>Core services</span></div>
+          <div class="arch-lane">
+            <div class="arch-cells" style="grid-template-columns:repeat(4,minmax(0,1fr))">
+              <div class="arch-cell" data-arch>Dispatch Matcher</div>
+              <div class="arch-cell" data-arch>Fare Calculation Engine</div>
+              <div class="arch-cell" data-arch>Commission Ledger</div>
+              <div class="arch-cell" data-arch>Fleet Compliance Rules</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Layer 5: Database & Infrastructure -->
+        <div class="arch-row">
+          <div class="arch-label"><b>Data &amp; Infrastructure</b><span>Storage &amp; Cloud</span></div>
+          <div class="arch-lane">
+            <div class="arch-cells" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+              <div class="arch-cell wide"><svg class="icon"><use href="#i-db"/></svg>Transactional Database (ACID Ledger)</div>
+              <div class="arch-cell wide"><svg class="icon"><use href="#i-chart"/></svg>Time-Series Telemetry Store</div>
+              <div class="arch-cell wide"><svg class="icon"><use href="#i-blocks"/></svg>Containerized Cloud Infrastructure</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="arch-foot" id="archFoot">Continuous telemetry and encrypted data flows maintain sub-second state across all platform layers.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     21. METRICS SECTION (Large Typography, Zero Unsupported Claims)
+     ====================================================================== -->
+<section class="metrics-section" id="metrics" aria-labelledby="metrics-title">
+  <div class="container">
+    <div class="metrics-big-head" id="metrics-title">
+      Built to scale from your first fleet to a complete mobility network.
+    </div>
+
+    <div class="metrics-4-grid">
+      <div class="metric-4-item">
+        <span class="num-big">24/7</span>
+        <span class="desc">Continuous real-time operations and automated trip assignment with zero human dispatch bottlenecks.</span>
+      </div>
+      <div class="metric-4-item">
+        <span class="num-big">Real-Time</span>
+        <span class="desc">Sub-second geospatial tracking and turn-by-turn route telemetry stream to riders and control rooms.</span>
+      </div>
+      <div class="metric-4-item">
+        <span class="num-big">Multi-Role</span>
+        <span class="desc">Interconnected interfaces for passengers, drivers, vendors, fleet managers, and super-administrators.</span>
+      </div>
+      <div class="metric-4-item">
+        <span class="num-big">Configurable</span>
+        <span class="desc">Customizable fare structures, commission tiers, and operational rules tailored to your local business model.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     COMPANY / ABOUT SECTION
+     ====================================================================== -->
+<section class="section" id="company" aria-labelledby="company-title">
+  <div class="container about">
+    <div style="display:grid;gap:24px">
+      <span class="eyebrow">About NJJ Technologies</span>
+      <h2 id="company-title"><span>We Build.</span><span>We Solve.</span><span>We Scale.</span></h2>
+      <p class="lead">NJJ Technologies is a B2B technology company focused on engineering enterprise software and digital mobility infrastructure.</p>
+    </div>
+    <div class="about-copy">
+      <p class="lead">We believe modern transportation businesses deserve technology that gives them complete operational autonomy, transparent unit economics, and full control over their customer relationships.</p>
+      <ul class="cap-list">
+        <li>CityRideTaxi Mobility Platform <span>Flagship</span></li>
+        <li>Enterprise Dispatch Automation <span>Core Tech</span></li>
+        <li>Multi-Vendor Fleet Infrastructure <span>B2B Suite</span></li>
+        <li>Configurable Fare Engines <span>FinTech</span></li>
+        <li>White-Label Deployment <span>Branding</span></li>
+      </ul>
+      <div>
+        <button class="btn btn-dark" type="button" data-open-modal="demo">About NJJ Technologies <svg class="icon icon-sm arrow"><use href="#i-arrow"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     RESOURCES / FAQ SECTION
+     ====================================================================== -->
+<section class="section section-alt" id="resources" aria-labelledby="faq-title">
+  <div class="container faq-wrap">
+    <div style="display:grid;gap:20px;align-content:start">
+      <span class="eyebrow">Resources · FAQ</span>
+      <h2 class="h2" id="faq-title">Frequently asked questions.</h2>
+      <p class="muted">Have questions about deployment timelines, licensing, or white-label customization? <button class="btn-text" type="button" data-open-modal="demo" style="color:var(--accent);font-weight:600">Speak with our platform specialists</button>.</p>
+    </div>
+
+    <div class="faq" id="faqList">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What does NJJ Technologies do?<span class="faq-sign" aria-hidden="true"></span></button>
+        <div class="faq-a"><div><p>NJJ Technologies is an enterprise technology company that builds digital platforms and mobility infrastructure. Its flagship product is CityRideTaxi, a complete white-label taxi and mobility operating system for B2B transportation businesses.</p></div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What is CityRideTaxi?<span class="faq-sign" aria-hidden="true"></span></button>
+        <div class="faq-a"><div><p>CityRideTaxi is an intelligent, white-label mobility platform connecting passengers, drivers, fleet owners, vendors, and administrators into one unified operational software suite.</p></div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Is CityRideTaxi a consumer app like Ola or Uber?<span class="faq-sign" aria-hidden="true"></span></button>
+        <div class="faq-a"><div><p>No. NJJ Technologies does not operate consumer ride-hailing services. We provide the complete white-label technology platform to businesses, taxi operators, and fleet companies who run the platform under their own brand.</p></div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Can our business operate under our own brand name?<span class="faq-sign" aria-hidden="true"></span></button>
+        <div class="faq-a"><div><p>Yes. The platform is 100% white-label. The passenger app (iOS/Android), driver app, vendor portal, admin dashboard, and public booking website are deployed with your custom brand name, logo, color palette, and corporate domain.</p></div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">How does automated dispatch work?<span class="faq-sign" aria-hidden="true"></span></button>
+        <div class="faq-a"><div><p>When a booking is confirmed, CityRideTaxi's dispatch algorithm evaluates eligible online drivers based on proximity, traffic conditions, vehicle class, shift readiness, and vendor preference, automatically offering the ride in milliseconds.</p></div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Can we configure our own fare structures and commission splits?<span class="faq-sign" aria-hidden="true"></span></button>
+        <div class="faq-a"><div><p>Yes. You have complete control over base fares, distance rates, minute charges, surge multipliers, airport surcharges, and tax percentages. You can also configure commission percentages for the platform, vendor, and driver on every trip.</p></div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Does the platform support multiple vendors and fleet suppliers?<span class="faq-sign" aria-hidden="true"></span></button>
+        <div class="faq-a"><div><p>Yes. Vendors receive their own secure portal to manage assigned vehicles and drivers, monitor trip completion, and audit their weekly margin statements while administrators oversee all vendors centrally.</p></div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">How do we get started or request a demo?<span class="faq-sign" aria-hidden="true"></span></button>
+        <div class="faq-a"><div><p>You can request an interactive platform demonstration by clicking "Book a Demo" anywhere on this page or completing the contact form below. Our solutions engineering team will schedule a live architecture walkthrough.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     22. FINAL CTA
+     ====================================================================== -->
+<section class="section ink" id="final-cta" style="position:relative;overflow:hidden;border-top:1px solid var(--ink-line)">
+  <div class="hero-grid-bg" style="opacity:0.25"></div>
+  <div class="container" style="position:relative;z-index:2;text-align:center;padding-block:40px;">
+    <span class="eyebrow" style="color:var(--ink-accent);margin-inline:auto">Deploy CityRideTaxi</span>
+    <h2 class="h2" style="color:var(--ink-fg);max-width:20ch;margin-inline:auto;margin-top:16px;">Ready to build the future of your mobility business?</h2>
+    <p class="lead" style="color:var(--ink-muted);max-width:54ch;margin-inline:auto;margin-top:16px;">Discover how CityRideTaxi can bring your customers, drivers, vendors and operations together in one intelligent platform.</p>
+
+    <div class="cta-row" style="justify-content:center;margin-top:32px;">
+      <button class="btn btn-primary btn-lg" type="button" data-open-modal="demo">Request a Demo <svg class="icon icon-sm arrow"><use href="#i-arrow"/></svg></button>
+      <a class="btn btn-secondary btn-lg" href="#platform">Explore CityRideTaxi</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     CONTACT FORM SECTION
+     ====================================================================== -->
+<section class="section section-alt" id="contact" aria-labelledby="contact-title">
+  <div class="container contact">
+    <div class="contact-copy">
+      <span class="eyebrow">Enterprise Inquiries</span>
+      <h2 class="h2" id="contact-title">Talk to Our Platform Engineering Team.</h2>
+      <p class="lead">Tell us about your current fleet size, dispatch requirements, and operational goals. Let's explore how CityRideTaxi can power your mobility network.</p>
+
+      <div class="contact-alt">
+        <a href="#contact" data-demo><span>CityRideTaxi Live Demo<small>See the complete passenger app, driver app, and admin suite.</small></span><svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
+        <a href="#contact" data-custom><span>White-Label Deployment<small>Discuss branding, custom tariffs, and multi-city rollouts.</small></span><svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+
+    <div class="form-card" id="contact-form">
+      <form id="inquiry" novalidate>
+        <div class="form-banner" id="formBanner" role="alert"><svg class="icon icon-sm"><use href="#i-alert"/></svg><span>Please complete the required fields below.</span></div>
+        <div class="form-grid">
+          <div class="field">
+            <label for="f-name">Full Name <span class="req">*</span></label>
+            <input class="input" id="f-name" name="name" autocomplete="name" required placeholder="E.g. Rajesh Sharma">
+            <span class="err"><svg class="icon icon-xs"><use href="#i-alert"/></svg>Enter your full name.</span>
+          </div>
+          <div class="field">
+            <label for="f-company">Company / Organization <span class="req">*</span></label>
+            <input class="input" id="f-company" name="company" autocomplete="organization" required placeholder="Transportation company name">
+            <span class="err"><svg class="icon icon-xs"><use href="#i-alert"/></svg>Enter your company name.</span>
+          </div>
+          <div class="field">
+            <label for="f-email">Business Email <span class="req">*</span></label>
+            <input class="input" id="f-email" name="email" type="email" autocomplete="email" required placeholder="name@company.com">
+            <span class="err" id="emailErr"><svg class="icon icon-xs"><use href="#i-alert"/></svg><span>Enter a valid business email.</span></span>
+          </div>
+          <div class="field">
+            <label for="f-phone">Phone / WhatsApp</label>
+            <input class="input" id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="+91 98765 43210">
+            <span class="err"><svg class="icon icon-xs"><use href="#i-alert"/></svg>Use digits and country code.</span>
+          </div>
+          <div class="field">
+            <label for="f-type">Business Type <span class="req">*</span></label>
+            <select class="select" id="f-type" name="type" required>
+              <option value="">Select business sector</option>
+              <option>Taxi Operator</option>
+              <option>Fleet Owner / Operator</option>
+              <option>Travel / Tour Company</option>
+              <option>Airport Transportation Provider</option>
+              <option>Corporate Mobility Provider</option>
+              <option>Mobility Startup</option>
+              <option>Taxi Association / Union</option>
+              <option>Regional Transportation Network</option>
+            </select>
+            <span class="err"><svg class="icon icon-xs"><use href="#i-alert"/></svg>Select your business sector.</span>
+          </div>
+          <div class="field">
+            <label for="f-build">Primary Requirement <span class="req">*</span></label>
+            <select class="select" id="f-build" name="build" required>
+              <option value="">Select primary requirement</option>
+              <option value="demo">Live CityRideTaxi Demo</option>
+              <option value="whitelabel">Complete White-Label Platform</option>
+              <option value="fleet">Fleet &amp; Dispatch Management</option>
+              <option value="custom">Custom Mobility Integration</option>
+            </select>
+            <span class="err"><svg class="icon icon-xs"><use href="#i-alert"/></svg>Choose your requirement.</span>
+          </div>
+          <div class="field full">
+            <label for="f-msg">Fleet Size &amp; Operational Needs <span class="req">*</span></label>
+            <textarea class="textarea" id="f-msg" name="message" required placeholder="Describe your current fleet size (vehicles/drivers), operating city, and timeline for launching or upgrading your technology platform."></textarea>
+            <span class="err"><svg class="icon icon-xs"><use href="#i-alert"/></svg>Please provide at least 20 characters about your operation.</span>
+          </div>
+          <div class="field full">
+            <label class="check" for="f-consent">
+              <input type="checkbox" id="f-consent" name="consent" required>
+              <span>I consent to NJJ Technologies contacting me regarding our enterprise mobility platform inquiry.</span>
+            </label>
+            <span class="err"><svg class="icon icon-xs"><use href="#i-alert"/></svg>Please confirm your consent.</span>
+          </div>
+        </div>
+        <div class="form-foot">
+          <p>We respect your privacy. Inquiries are handled by enterprise mobility specialists.</p>
+          <button class="btn btn-primary btn-lg" type="submit" id="submitBtn">Send Inquiry <svg class="icon icon-sm arrow"><use href="#i-arrow"/></svg></button>
+        </div>
+      </form>
+      <div class="form-success" id="formSuccess" hidden tabindex="-1">
+        <span class="ok-ic"><svg class="icon"><use href="#i-check"/></svg></span>
+        <h3>Thank You. Inquiry Received.</h3>
+        <p class="muted" id="successDetail">An enterprise solutions engineer will reach out to you shortly.</p>
+        <button class="btn btn-secondary" type="button" id="formReset">Submit another inquiry</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ======================================================================
+     23. FOOTER
+     ====================================================================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="logo" href="#top">
+          <svg class="logo-mark" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="7" fill="var(--fg)"/><path d="M8.5 19.5V8.5l11 11V8.5" fill="none" stroke="var(--bg)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="19.5" cy="8.5" r="2.4" fill="var(--accent)"/></svg>
+          <span class="logo-word"><b>NJJ</b><span>Technologies</span></span>
+        </a>
+        <p>Technology for smarter mobility.</p>
+      </div>
+
+      <div class="foot-col">
+        <h4>Live Portals</h4>
+        <ul>
+          <li><a href="https://cityridetaxi.org/" target="_blank" rel="noopener">Rider Web App ↗</a></li>
+          <li><a href="https://cityridetaxi.org/driver.html" target="_blank" rel="noopener">Pilot Center ↗</a></li>
+          <li><a href="https://cityridetaxi.org/vendor.html" target="_blank" rel="noopener">Partner Hub ↗</a></li>
+          <li><a href="https://cityridetaxi.org/admin.html" target="_blank" rel="noopener">Admin Portal ↗</a></li>
+          <li><a href="#cityride">Platform Suite</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="#use-cases">Taxi Operators</a></li>
+          <li><a href="#use-cases">Fleet Management</a></li>
+          <li><a href="#vendor-management">Vendor Management</a></li>
+          <li><a href="#use-cases">Corporate Mobility</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#company">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact">Careers</a></li>
+          <li><a href="#contact">Partners</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#architecture">Documentation</a></li>
+          <li><a href="#contact">Support</a></li>
+          <li><a href="#resources">FAQs</a></li>
+          <li><a href="design-system.html">Design System</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot-big" aria-hidden="true">NJJ Technologies</div>
+
+    <div class="foot-bottom">
+      <span>© 2026 NJJ Technologies. All rights reserved.</span>
+      <div style="display:flex;gap:20px;align-items:center;">
+        <a href="#top" style="color:var(--muted)">Privacy Policy</a>
+        <a href="#top" style="color:var(--muted)">Terms of Service</a>
+        <span class="theme-toggle" role="group" aria-label="Color theme">
+          <button type="button" data-theme-set="system" aria-pressed="true">System</button>
+          <button type="button" data-theme-set="light" aria-pressed="false">Light</button>
+          <button type="button" data-theme-set="dark" aria-pressed="false">Dark</button>
+        </span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ======================================================================
+     BOOK A DEMO MODAL DIALOG
+     ====================================================================== -->
+<div class="modal-overlay" id="demoModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-container">
+    <div class="modal-head">
+      <div>
+        <span class="eyebrow" style="margin-bottom:6px">Schedule Demonstration</span>
+        <h3 id="modalTitle" style="font-size:1.5rem;letter-spacing:-0.02em;">Book a CityRideTaxi Demo</h3>
+        <p style="color:var(--muted);font-size:0.875rem;margin-top:4px;">Speak with an enterprise mobility architect.</p>
+      </div>
+      <button type="button" class="modal-close-btn" data-close-modal aria-label="Close dialog">
+        <svg class="icon"><use href="#i-close"/></svg>
+      </button>
+    </div>
+
+    <form id="modalDemoForm">
+      <div style="display:grid;gap:16px;">
+        <div class="field">
+          <label for="m-name">Your Name</label>
+          <input class="input" id="m-name" required placeholder="Full Name">
+        </div>
+        <div class="field">
+          <label for="m-company">Company / Fleet Organization</label>
+          <input class="input" id="m-company" required placeholder="E.g. Metro Express Fleet">
+        </div>
+        <div class="field">
+          <label for="m-email">Business Email</label>
+          <input class="input" id="m-email" type="email" required placeholder="name@company.com">
+        </div>
+        <div class="field">
+          <label for="m-type">Operating Sector</label>
+          <select class="select" id="m-type" required>
+            <option value="demo">Taxi Company / Operator</option>
+            <option value="fleet">Fleet Owner / Management</option>
+            <option value="vendor">Vendor Network / Sub-Fleets</option>
+            <option value="corporate">Corporate Mobility Team</option>
+            <option value="airport">Airport Transportation</option>
+            <option value="startup">Mobility Startup</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="m-size">Current Fleet Size</label>
+          <select class="select" id="m-size">
+            <option>10 – 50 Vehicles</option>
+            <option>50 – 200 Vehicles</option>
+            <option>200 – 1,000 Vehicles</option>
+            <option>1,000+ Vehicles</option>
+          </select>
+        </div>
+      </div>
+      <div style="margin-top:24px;display:flex;justify-content:flex-end;gap:12px;">
+        <button type="button" class="btn btn-secondary btn-sm" data-close-modal>Cancel</button>
+        <button type="submit" class="btn btn-primary btn-sm" id="modalSubmitBtn">Schedule Walkthrough <svg class="icon icon-xs arrow"><use href="#i-arrow"/></svg></button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
