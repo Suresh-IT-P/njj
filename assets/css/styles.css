@@ -2838,3 +2838,122 @@ body {
   background: linear-gradient(0deg, rgba(8, 12, 14, 0.95) 0%, rgba(8, 12, 14, 0.45) 65%, transparent 100%) !important;
 }
 
+
+/* =========================================================================
+   EXACT DESIGN SYSTEM (MATCHING USER MOCKUP IMAGE)
+   =========================================================================
+:root {
+  --bg: #060a0c !important;
+  --bg-2: #0b1013 !important;
+  --surface: #0f1619 !important;
+  --surface-2: #141e22 !important;
+  --fg: #f0f5f6 !important;
+  --fg-2: #9db0b3 !important;
+  --muted: #647578 !important;
+  --line: rgba(255, 255, 255, 0.09) !important;
+  --line-2: rgba(255, 255, 255, 0.15) !important;
+  --accent: #00e699 !important;
+  --accent-hover: #26f0ac !important;
+  --accent-fg: #021a11 !important;
+  --accent-soft: rgba(0, 230, 153, 0.12) !important;
+  --accent-line: rgba(0, 230, 153, 0.4) !important;
+  --ok: #00e699 !important;
+  --warn: #ffb82e !important;
+  --bad: #ff5252 !important;
+  --info: #3b82f6 !important;
+}
+body { background-color: #060a0c !important; color: #f0f5f6 !important; }
+.site-header { background: rgba(6, 10, 12, 0.9) !important; backdrop-filter: blur(20px) !important; border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important; }
+.nav-link { color: #9db0b3 !important; font-size: 0.875rem !important; font-weight: 500 !important; }
+.nav-link:hover { color: #00e699 !important; }
+.live-badge-btn { background: rgba(0, 230, 153, 0.12) !important; color: #00e699 !important; border: 1px solid rgba(0, 230, 153, 0.3) !important; border-radius: 999px !important; font-weight: 600 !important; }
+.btn-primary { background: #00e699 !important; color: #021a11 !important; font-weight: 700 !important; border-radius: 8px !important; box-shadow: 0 4px 20px rgba(0, 230, 153, 0.35) !important; border: none !important; }
+.btn-primary:hover { background: #26f0ac !important; box-shadow: 0 6px 28px rgba(0, 230, 153, 0.5) !important; transform: translateY(-2px) !important; }
+.btn-secondary { background: rgba(255, 255, 255, 0.05) !important; color: #f0f5f6 !important; border: 1px solid rgba(255, 255, 255, 0.14) !important; border-radius: 8px !important; font-weight: 600 !important; }
+.btn-secondary:hover { background: rgba(255, 255, 255, 0.1) !important; border-color: rgba(0, 230, 153, 0.4) !important; color: #00e699 !important; }
+.hero { padding-block: clamp(40px, 6vw, 80px) !important; }
+.hero-copy h1 { font-size: clamp(2.4rem, 4.5vw, 4.2rem) !important; line-height: 1.05 !important; letter-spacing: -0.04em !important; font-weight: 700 !important; }
+.hero-copy h1 .soft { color: #00e699 !important; }
+.hero-stat-banner { display: grid !important; grid-template-columns: repeat(4, minmax(0, 1fr)) !important; gap: 16px !important; margin-top: 36px !important; background: rgba(15, 22, 25, 0.8) !important; border: 1px solid rgba(255, 255, 255, 0.08) !important; border-radius: 12px !important; padding: 24px !important; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important; }
+.hero-stat-card .val { font-size: 2rem !important; font-weight: 800 !important; color: #00e699 !important; font-family: var(--font-mono) !important; }
+.hero-stat-card .lbl { font-size: 0.75rem !important; color: #647578 !important; text-transform: uppercase !important; letter-spacing: 0.08em !important; }
+.cityride-portals-grid { display: grid !important; grid-template-columns: repeat(4, minmax(0, 1fr)) !important; gap: 20px !important; }
+.portal-card { background: rgba(15, 22, 25, 0.8) !important; border: 1px solid rgba(255, 255, 255, 0.08) !important; border-radius: 14px !important; padding: 24px !important; display: flex !important; flex-direction: column !important; justify-content: space-between !important; transition: all 0.25s ease !important; }
+.portal-card:hover { border-color: rgba(0, 230, 153, 0.4) !important; transform: translateY(-4px) !important; box-shadow: 0 12px 32px rgba(0, 230, 153, 0.15) !important; }
+.portal-num { font-family: var(--font-mono) !important; font-size: 0.75rem !important; color: #00e699 !important; letter-spacing: 0.1em !important; text-transform: uppercase !important; }
+.portal-card h3 { font-size: 1.25rem !important; margin-block: 10px 8px !important; font-weight: 700 !important; }
+.portal-card p { font-size: 0.875rem !important; color: #9db0b3 !important; line-height: 1.5 !important; margin-bottom: 20px !important; }
+.portal-btn { display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 8px !important; height: 42px !important; padding: 0 16px !important; border-radius: 8px !important; font-size: 0.85rem !important; font-weight: 600 !important; background: rgba(255, 255, 255, 0.04) !important; border: 1px solid rgba(255, 255, 255, 0.1) !important; color: #f0f5f6 !important; transition: all 0.2s ease !important; }
+.portal-card:hover .portal-btn { background: #00e699 !important; color: #021a11 !important; border-color: #00e699 !important; }
+.tariff-policy-grid { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 20px !important; }
+.tariff-policy-card { background: rgba(15, 22, 25, 0.8) !important; border: 1px solid rgba(255, 255, 255, 0.08) !important; border-radius: 12px !important; padding: 22px !important; }
+.tariff-policy-card .tp-title { font-size: 0.95rem !important; font-weight: 700 !important; color: #f0f5f6 !important; display: flex !important; align-items: center !important; gap: 8px !important; }
+.tariff-policy-card .tp-val { font-size: 1.35rem !important; font-weight: 800 !important; color: #00e699 !important; margin-block: 8px 6px !important; font-family: var(--font-mono) !important; }
+@media (max-width: 1024px) { .cityride-portals-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } .tariff-policy-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } }
+@media (max-width: 640px) { .cityride-portals-grid { grid-template-columns: 1fr !important; } .tariff-policy-grid { grid-template-columns: 1fr !important; } .hero-stat-banner { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } }
+@media (max-width: 440px) { .hero-stat-banner { grid-template-columns: 1fr !important; } }
+
+
+/* =========================================================================
+   GRID & CARD LAYOUT UTILITIES FOR REDESIGN
+   =========================================================================
+.grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.module-card {
+  background: rgba(17, 24, 27, 0.75) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 14px !important;
+  padding: 24px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  transition: all 0.25s ease !important;
+}
+.module-card:hover {
+  border-color: rgba(0, 210, 180, 0.4) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 36px rgba(0, 210, 180, 0.12) !important;
+}
+.module-num {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+.module-card h3 {
+  font-size: 1.15rem !important;
+  font-weight: 600 !important;
+  color: #f0f5f6 !important;
+  margin-bottom: 8px !important;
+}
+.module-card p {
+  font-size: 0.875rem !important;
+  color: #a0b1b4 !important;
+  line-height: 1.5 !important;
+  margin-bottom: 16px !important;
+}
+.module-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.module-tag {
+  font-size: 0.72rem;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #a0b1b4;
+}
+@media (max-width: 900px) {
+  .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr !important; gap: 14px !important; }
+  .module-card { padding: 18px !important; }
+}
+
