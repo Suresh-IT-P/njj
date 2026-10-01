@@ -2695,3 +2695,16 @@ img, video, canvas, svg { max-width: 100%; }
   .hero-glow { width: 300px; height: 300px; right: -100px; top: -80px; }
   .dash-wrap::before { display: none; }
 }
+
+/* =========================================================================
+   Enterprise Hero Section Enhancements
+   =========================================================================
+.hero-trust-row { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); }
+.ht-item { display: inline-flex; align-items: center; gap: 6px; font-size: 0.8125rem; color: var(--fg-2); font-weight: 500; }
+.hero-stat-banner { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 36px; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--surface); padding: 20px 24px; box-shadow: var(--e-1); }
+.hero-stat-card { display: grid; gap: 4px; }
+.hero-stat-card .val { font-size: 1.625rem; font-weight: 700; letter-spacing: -0.03em; color: var(--accent); font-family: var(--font-mono); }
+.hero-stat-card .lbl { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+@media (max-width: 768px) { .hero-stat-banner { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 16px; gap: 14px; } }
+@media (max-width: 440px) { .hero-stat-banner { grid-template-columns: 1fr; } }
+
