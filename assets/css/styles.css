@@ -2708,3 +2708,38 @@ img, video, canvas, svg { max-width: 100%; }
 @media (max-width: 768px) { .hero-stat-banner { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 16px; gap: 14px; } }
 @media (max-width: 440px) { .hero-stat-banner { grid-template-columns: 1fr; } }
 
+
+/* =========================================================================
+   MOBILE MARGIN & PADDING RECOVERY SYSTEM
+   =========================================================================
+@media (max-width: 768px) {
+  :root { --gutter: 20px; --section-y: 60px; }
+  .container { padding-inline: 20px !important; }
+  .cap, .cap + .cap { padding: 20px 16px !important; border-left: 1px solid var(--line) !important; border-radius: var(--r-md); background: var(--surface); margin-bottom: 12px; }
+  .pillar, .pillar + .pillar { padding: 20px 16px !important; border-left: 1px solid var(--line) !important; border-radius: var(--r-md); background: var(--surface); margin-bottom: 12px; }
+  .tariff-policy-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
+  .tariff-policy-card { padding: 18px 16px !important; border-radius: var(--r-md) !important; }
+  .editorial-img-banner { border-radius: var(--r-md) !important; margin-block: 24px !important; }
+  .editorial-img-overlay { padding: 20px 16px !important; }
+  .editorial-img-overlay h3 { font-size: 1.25rem !important; }
+  .editorial-img-overlay p { font-size: 0.875rem !important; }
+  .hero-inner { gap: 32px !important; }
+  .hero-copy { gap: 16px !important; }
+  .hero-actions { gap: 16px !important; width: 100%; }
+  .hero-trust-row { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 10px 12px !important; padding: 14px 16px !important; background: var(--surface-2) !important; border-radius: var(--r-md) !important; border: 1px solid var(--line) !important; width: 100%; }
+  .hero-stat-banner { margin-top: 24px !important; padding: 16px 18px !important; border-radius: var(--r-md) !important; }
+  .section-head { margin-bottom: 32px !important; }
+  .section-head.split { gap: 16px !important; }
+  .cityride-portals-grid { gap: 16px !important; }
+  .portal-card { padding: 20px 16px !important; }
+  .hierarchy { margin-top: 28px !important; padding: 8px !important; }
+  .h-cell { padding: 16px 14px !important; }
+}
+@media (max-width: 480px) {
+  :root { --gutter: 16px; }
+  .container { padding-inline: 16px !important; }
+  .hero-trust-row { grid-template-columns: 1fr !important; }
+  .hero-stat-banner { grid-template-columns: 1fr !important; gap: 16px !important; }
+  .cta-row .btn { width: 100% !important; margin-bottom: 8px; }
+}
+
