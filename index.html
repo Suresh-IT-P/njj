@@ -535,84 +535,17 @@
 <!-- ======================================================================
      6. PROBLEM SECTION
      ====================================================================== -->
-<section class="section" id="problem" aria-labelledby="prob-title">
+<section class="section" id="app-showcase">
   <div class="container">
-    <div class="section-head split">
-      <div style="display:grid;gap:18px">
-        <span class="eyebrow">The Operational Challenge</span>
-        <h2 class="h2" id="prob-title">Mobility operations are complex.<br>Your technology shouldn't be.</h2>
+    <div class="editorial-img-banner">
+      <img src="assets/img/app-preview.png" alt="CityRideTaxi Next-Gen Mobile Passenger & Driver Operating Experience" loading="lazy">
+      <div class="editorial-img-overlay">
+        <div>
+          <span class="pill acc" style="margin-bottom:12px">Next-Gen Mobility Experience</span>
+          <h3>Intelligent Dispatch &amp; Seamless Rider Booking</h3>
+          <p>Streamlined booking pipelines, low-latency GPS tracking, automated fare calculations, and verified driver dispatch built for maximum fleet efficiency.</p>
+        </div>
       </div>
-      <p class="lead">Traditional taxi and transportation operators struggle with legacy dispatch software, siloed vendor spreadsheets, and disconnected customer touchpoints that erode margins and limit growth.</p>
-    </div>
-
-    <div class="problem-grid">
-      <!-- Card 1 -->
-      <article class="problem-card">
-        <div>
-          <div class="problem-header">
-            <span class="problem-num">01 / SILOED DATA</span>
-            <svg class="icon icon-sm" style="color:var(--bad)"><use href="#i-sheet"/></svg>
-          </div>
-          <h3>Fragmented Operations</h3>
-          <p>Driver and vehicle information spread across multiple systems, creating blind spots, duplicate paperwork, and compliance liabilities.</p>
-        </div>
-        <div class="problem-vis" aria-hidden="true">
-          <div class="prob-diag-row"><span>Driver Records (System A)</span><span class="pill bad">Desynced</span></div>
-          <div class="prob-diag-row"><span>Vehicle Inspection (Excel)</span><span class="pill warn">Unverified</span></div>
-          <div class="prob-diag-row"><span>Shift Roster (Phone calls)</span><span class="pill bad">Manual</span></div>
-        </div>
-      </article>
-
-      <!-- Card 2 -->
-      <article class="problem-card">
-        <div>
-          <div class="problem-header">
-            <span class="problem-num">02 / BOTTLENECKS</span>
-            <svg class="icon icon-sm" style="color:var(--bad)"><use href="#i-call"/></svg>
-          </div>
-          <h3>Manual Dispatch</h3>
-          <p>Time-consuming driver assignment and trip coordination through telephone calls and messaging channels, leading to high ETA delays and dropped bookings.</p>
-        </div>
-        <div class="problem-vis" aria-hidden="true">
-          <div class="prob-diag-row"><span>Manual Call Duration</span><b class="num" style="color:var(--bad)">3 to 6 mins</b></div>
-          <div class="prob-diag-bar"><i style="width:78%;background:var(--bad)"></i></div>
-          <div class="prob-diag-row"><span>Automated CityRide Algorithm</span><b class="num" style="color:var(--ok)">400 ms</b></div>
-        </div>
-      </article>
-
-      <!-- Card 3 -->
-      <article class="problem-card">
-        <div>
-          <div class="problem-header">
-            <span class="problem-num">03 / OPACITY</span>
-            <svg class="icon icon-sm" style="color:var(--bad)"><use href="#i-eye"/></svg>
-          </div>
-          <h3>Limited Visibility</h3>
-          <p>Businesses lack real-time visibility into active trips and fleet operations, making it impossible to enforce SLAs, verify routes, or respond to emergencies.</p>
-        </div>
-        <div class="problem-vis" aria-hidden="true">
-          <div class="prob-diag-row"><span>Real-Time Fleet Location</span><span class="pill bad">Unknown</span></div>
-          <div class="prob-diag-row"><span>Route Deviations</span><span class="pill warn">Unrecorded</span></div>
-          <div class="prob-diag-row"><span>Actual Metering Accuracy</span><span class="pill bad">Disputed</span></div>
-        </div>
-      </article>
-
-      <!-- Card 4 -->
-      <article class="problem-card">
-        <div>
-          <div class="problem-header">
-            <span class="problem-num">04 / DISCORD</span>
-            <svg class="icon icon-sm" style="color:var(--bad)"><use href="#i-vendor"/></svg>
-          </div>
-          <h3>Disconnected Vendors</h3>
-          <p>Vendor, driver and fleet operations are difficult to coordinate. Reconciling commissions, margin splits, and weekly payouts requires weeks of manual audits.</p>
-        </div>
-        <div class="problem-vis" aria-hidden="true">
-          <div class="prob-diag-row"><span>Vendor Dispute Frequency</span><b class="num" style="color:var(--bad)">High</b></div>
-          <div class="prob-diag-row"><span>Margin Reconciliation Time</span><b class="num" style="color:var(--warn)">14 Days</b></div>
-          <div class="prob-diag-row"><span>CityRide Automated Settlement</span><b class="num" style="color:var(--ok)">Instant / Shift-based</b></div>
-        </div>
-      </article>
     </div>
   </div>
 </section>
@@ -1551,8 +1484,24 @@
   </div>
 </section>
 
+<!-- Editorial Passenger Experience Showcase -->
+<section class="section section-alt" id="passenger-experience">
+  <div class="container">
+    <div class="editorial-img-banner">
+      <img src="assets/img/passenger-experience.png" alt="CityRideTaxi Premium Rider Experience and Professional Chauffeur Service" loading="lazy">
+      <div class="editorial-img-overlay">
+        <div>
+          <span class="pill ok" style="margin-bottom:12px">Premium Passenger Experience</span>
+          <h3>Trusted Mobility across Every City Route</h3>
+          <p>Delivering 99.4% punctual pickups, transparent audited billing, and verified driver safety for passengers and corporate clients nationwide.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ======================================================================
-     15. FARE & PRICING ENGINE (Interactive Rule Simulator)
+     15. FARE & PRICING ENGINE (Streamlined Tariff Rules)
      ====================================================================== -->
 <section class="section" id="pricing-engine" aria-labelledby="fare-title">
   <div class="container">
@@ -1564,88 +1513,20 @@
       <p class="lead">Every mobility company operates under different economics. CityRideTaxi supports configurable fare structures: base tariffs, distance tiers, peak surge multipliers, airport levies, GST, and customized driver/vendor commission splits.</p>
     </div>
 
-    <!-- Interactive Pricing Configuration Simulator -->
-    <div class="pricing-sim">
-      <div class="pricing-controls">
-        <h3 style="font-size:1.125rem;letter-spacing:-0.01em;">Configure Fare Parameters</h3>
-
-        <div class="field">
-          <label for="fareVehicle">Vehicle Type</label>
-          <select class="select" id="fareVehicle">
-            <option value="sedan" selected>Sedan (Base ₹60, ₹14/km)</option>
-            <option value="suv">SUV (Base ₹90, ₹19/km)</option>
-            <option value="hatchback">Hatchback (Base ₹45, ₹11/km)</option>
-            <option value="premium">Executive Premium (Base ₹120, ₹26/km)</option>
-            <option value="electric">Electric Mobility (Base ₹70, ₹15/km)</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="fareCategory">Trip Category</label>
-          <select class="select" id="fareCategory">
-            <option value="city" selected>Standard City Ride</option>
-            <option value="airport">Airport Transfer (+₹80 Toll/Parking)</option>
-            <option value="outstation">Inter-City Outstation (Min 130 km + Driver Betta ₹400)</option>
-            <option value="hillstation">Hill Station Route (+₹400 Terrain Surcharge)</option>
-            <option value="parcel">📦 Parcel Courier Delivery</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="fareDistance">Trip Distance: <b id="fareDistanceVal" style="color:var(--accent)">12 km</b></label>
-          <input type="range" id="fareDistance" min="2" max="280" value="12" step="1" style="width:100%;accent-color:var(--accent)">
-        </div>
-
-        <div class="field">
-          <label for="fareSurge">Demand &amp; Peak Multiplier</label>
-          <select class="select" id="fareSurge">
-            <option value="1.0" selected>1.0x — Standard Demand</option>
-            <option value="1.25">1.25x — Moderate Rain / Peak</option>
-            <option value="1.5">1.50x — High Demand Rush Hour</option>
-            <option value="2.0">2.00x — Midnight / Festival Peak</option>
-          </select>
-        </div>
-      </div>
-
-      <!-- Real-Time Calculation Output Card -->
-      <div class="pricing-output">
+    <!-- Editorial AI Dispatch & Pricing Infrastructure Visual -->
+    <div class="editorial-img-banner" style="margin-bottom:32px;">
+      <img src="assets/img/ai-dispatch.png" alt="CityRideTaxi AI Dispatch Control & Automated Fare Calculation Engine" loading="lazy">
+      <div class="editorial-img-overlay">
         <div>
-          <span class="eyebrow plain" style="margin-bottom:8px">Audited Fare Breakdown</span>
-          <h4 style="font-size:1.25rem;letter-spacing:-0.02em;margin-bottom:16px;">Automated Split Ledger</h4>
-
-          <div class="fare-calc-row">
-            <span>Base Fare</span>
-            <b class="num" id="outBaseFare">₹60</b>
-          </div>
-          <div class="fare-calc-row">
-            <span>Distance Cost</span>
-            <b class="num" id="outDistFare">₹168</b>
-          </div>
-          <div class="fare-calc-row">
-            <span>Surge Rate</span>
-            <b class="num" id="outSurge">1.0x (Standard)</b>
-          </div>
-          <div class="fare-calc-row">
-            <span>Applicable GST (5%)</span>
-            <b class="num" id="outGst">₹11</b>
-          </div>
-          <div class="fare-calc-row total">
-            <span>Passenger Final Fare</span>
-            <b class="num" id="outTotalFare" style="color:var(--accent)">₹239</b>
-          </div>
-        </div>
-
-        <div style="background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;font-size:12px;display:grid;gap:6px;">
-          <div style="font-weight:600;font-family:var(--font-mono);text-transform:uppercase;color:var(--muted)">Automatic Revenue Split</div>
-          <div style="display:flex;justify-content:space-between"><span>Platform Cut (10%):</span><b class="num" id="outCommission">₹24</b></div>
-          <div style="display:flex;justify-content:space-between"><span>Vendor Margin (15%):</span><b class="num" id="outVendorShare">₹36</b></div>
-          <div style="display:flex;justify-content:space-between"><span>Driver Payout (75%):</span><b class="num" id="outDriverShare" style="color:var(--ok)">₹179</b></div>
+          <span class="pill acc" style="margin-bottom:12px">Automated Tariff Engine</span>
+          <h3>Algorithmic Fare Audit &amp; Revenue Split</h3>
+          <p>Instant automated splits between platform commissions, vendor margins, and net driver earnings with 100% audited transparency on every completed ride.</p>
         </div>
       </div>
     </div>
 
     <!-- Live Operating Policy Matrix from cityridetaxi.org -->
-    <div style="margin-top:36px;border-top:1px solid var(--line);padding-top:28px;">
+    <div style="border-top:1px solid var(--line);padding-top:28px;">
       <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:8px;">
         <span class="eyebrow plain" style="margin:0"><span class="live-dot-pulse"></span> Active Platform Tariff Rules · cityridetaxi.org</span>
         <span class="tag neutral">Automated Rule Engine</span>
