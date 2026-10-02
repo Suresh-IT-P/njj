@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 
 <html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>NJJ Technologies | Next-Gen Enterprise Mobility OS &amp; Fleet Software</title><meta content="NJJ Technologies is an enterprise mobility software engineering company. Presenting CityRideTaxi: turnkey B2B operating system for taxi operators, fleet owners, and dispatch networks." name="description"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function(){
+    emailjs.init({ publicKey: "-IR73-bxifOquC5Fr" });
+  })();
+</script>
 <style>@layer base{html,body{margin:0;padding:0;scroll-behavior:smooth;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}
 .no-scrollbar::-webkit-scrollbar{display:none;}
 .no-scrollbar{-ms-overflow-style:none;scrollbar-width:none;}
@@ -898,24 +904,24 @@
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 <div class="flex flex-col gap-1">
 <label class="font-eyebrow-badge text-[10px] text-text-muted uppercase">Full Name *</label>
-<input class="h-11 sm:h-10 px-3 rounded bg-surface-slate-base text-text-primary border border-white/10 focus:outline-none focus:ring-1 focus:ring-primary text-base sm:text-xs w-full" placeholder="e.g. Vikram Malhotra" required="" type="text"/>
+<input id="ent-name" name="from_name" class="h-11 sm:h-10 px-3 rounded bg-surface-slate-base text-text-primary border border-white/10 focus:outline-none focus:ring-1 focus:ring-primary text-base sm:text-xs w-full" placeholder="e.g. Vikram Malhotra" required="" type="text"/>
 </div>
 <div class="flex flex-col gap-1">
 <label class="font-eyebrow-badge text-[10px] text-text-muted uppercase">Organization / Fleet *</label>
-<input class="h-11 sm:h-10 px-3 rounded bg-surface-slate-base text-text-primary border border-white/10 focus:outline-none focus:ring-1 focus:ring-primary text-base sm:text-xs w-full" placeholder="e.g. Metro TransLogix" required="" type="text"/>
+<input id="ent-org" name="organization" class="h-11 sm:h-10 px-3 rounded bg-surface-slate-base text-text-primary border border-white/10 focus:outline-none focus:ring-1 focus:ring-primary text-base sm:text-xs w-full" placeholder="e.g. Metro TransLogix" required="" type="text"/>
 </div>
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 <div class="flex flex-col gap-1">
 <label class="font-eyebrow-badge text-[10px] text-text-muted uppercase">Corporate Email *</label>
-<input class="h-11 sm:h-10 px-3 rounded bg-surface-slate-base text-text-primary border border-white/10 focus:outline-none focus:ring-1 focus:ring-primary text-base sm:text-xs w-full" placeholder="vikram@translogix.in" required="" type="email"/>
+<input id="ent-email" name="reply_to" class="h-11 sm:h-10 px-3 rounded bg-surface-slate-base text-text-primary border border-white/10 focus:outline-none focus:ring-1 focus:ring-primary text-base sm:text-xs w-full" placeholder="vikram@translogix.in" required="" type="email"/>
 </div>
 <div class="flex flex-col gap-1">
 <label class="font-eyebrow-badge text-[10px] text-text-muted uppercase">Phone / WhatsApp *</label>
-<input class="h-11 sm:h-10 px-3 rounded bg-surface-slate-base text-text-primary border border-white/10 focus:outline-none focus:ring-1 focus:ring-primary text-base sm:text-xs w-full" placeholder="+91 98765 43210" required="" type="tel"/>
+<input id="ent-phone" name="phone" class="h-11 sm:h-10 px-3 rounded bg-surface-slate-base text-text-primary border border-white/10 focus:outline-none focus:ring-1 focus:ring-primary text-base sm:text-xs w-full" placeholder="+91 98765 43210" required="" type="tel"/>
 </div>
 </div>
-<button class="w-full py-3.5 rounded-lg bg-primary-container text-on-primary font-semibold text-sm hover:bg-primary transition-all shadow-[0_0_20px_rgba(16,185,129,0.4)] min-h-[44px]" type="submit">
+<button id="ent-submit-btn" class="w-full py-3.5 rounded-lg bg-primary-container text-on-primary font-semibold text-sm hover:bg-primary transition-all shadow-[0_0_20px_rgba(16,185,129,0.4)] min-h-[44px]" type="submit">
             Schedule Architecture Walkthrough ↗
           </button>
 </form>
@@ -1132,10 +1138,29 @@
 
   function handleDemoSubmit(e) {
     e.preventDefault();
-    const form = e.target;
-    const success = document.getElementById('form-success');
-    form.classList.add('hidden');
-    if (success) success.classList.remove('hidden');
+    var form = e.target;
+    var btn = document.getElementById('ent-submit-btn');
+    var success = document.getElementById('form-success');
+
+    var templateParams = {
+      from_name:    document.getElementById('ent-name').value,
+      organization: document.getElementById('ent-org').value,
+      reply_to:     document.getElementById('ent-email').value,
+      phone:        document.getElementById('ent-phone').value,
+      to_email:     'sureshit2005@gmail.com'
+    };
+
+    if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+
+    emailjs.send('service_5njenxy', 'template_rlkjy55', templateParams)
+      .then(function() {
+        form.classList.add('hidden');
+        if (success) success.classList.remove('hidden');
+      })
+      .catch(function(err) {
+        if (btn) { btn.disabled = false; btn.textContent = 'Schedule Architecture Walkthrough ↗'; }
+        alert('Failed to send. Please try again or email us directly at sureshit2005@gmail.com\n\nError: ' + JSON.stringify(err));
+      });
   }
 </script>
 </div></main>
