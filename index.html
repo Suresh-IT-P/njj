@@ -512,19 +512,19 @@
 <div class="overflow-x-auto no-scrollbar pb-2 -mx-4 px-4 sm:mx-0 sm:px-0">
 <div class="inline-flex items-center gap-2 p-1.5 rounded-xl bg-surface-container-low min-w-max border border-white/5" id="vehicle-tabs">
 <button class="px-3.5 py-2 rounded-lg text-xs font-semibold bg-primary-container text-on-primary transition-all flex items-center gap-1.5" onclick="switchVehicle('sedan', this)">
-<span class="material-symbols-outlined text-[16px]">directions_car</span> Sedan (4 Pax)
+<span class="material-symbols-outlined text-[16px]">directions_car</span> Sedan
 </button>
 <button class="px-3.5 py-2 rounded-lg text-xs text-text-muted hover:text-text-primary transition-all flex items-center gap-1.5" onclick="switchVehicle('hatchback', this)">
-<span class="material-symbols-outlined text-[16px]">directions_car</span> Hatchback (4 Pax)
+<span class="material-symbols-outlined text-[16px]">directions_car</span> Hatchback
 </button>
 <button class="px-3.5 py-2 rounded-lg text-xs text-text-muted hover:text-text-primary transition-all flex items-center gap-1.5" onclick="switchVehicle('suv', this)">
-<span class="material-symbols-outlined text-[16px]">airport_shuttle</span> SUV (6-7 Pax)
+<span class="material-symbols-outlined text-[16px]">airport_shuttle</span> SUV
 </button>
 <button class="px-3.5 py-2 rounded-lg text-xs text-text-muted hover:text-text-primary transition-all flex items-center gap-1.5" onclick="switchVehicle('bike', this)">
-<span class="material-symbols-outlined text-[16px]">two_wheeler</span> Bike (1 Pax)
+<span class="material-symbols-outlined text-[16px]">two_wheeler</span> Bike
 </button>
 <button class="px-3.5 py-2 rounded-lg text-xs text-text-muted hover:text-text-primary transition-all flex items-center gap-1.5" onclick="switchVehicle('auto', this)">
-<span class="material-symbols-outlined text-[16px]">electric_rickshaw</span> Auto (3 Pax)
+<span class="material-symbols-outlined text-[16px]">electric_rickshaw</span> Auto
 </button>
 <button class="px-3.5 py-2 rounded-lg text-xs text-text-muted hover:text-text-primary transition-all flex items-center gap-1.5" onclick="switchVehicle('8plus1', this)">
 <span class="material-symbols-outlined text-[16px]">groups</span> 8+1 Seater
@@ -617,7 +617,6 @@
 <th class="py-2 px-2">Package</th>
 <th class="py-2 px-2 text-right">Base Fare</th>
 <th class="py-2 px-2 text-right">Extra KM</th>
-<th class="py-2 px-2 text-right">Extra Hr</th>
 </tr>
 </thead>
 <tbody class="divide-y divide-surface-container-highest/30 text-text-primary" id="rental-matrix-body">
@@ -625,25 +624,21 @@
 <td class="py-2.5 px-2 font-semibold">2 Hrs - 20 KM</td>
 <td class="py-2.5 px-2 text-right text-primary font-bold">₹600</td>
 <td class="py-2.5 px-2 text-right text-text-muted">₹18/km</td>
-<td class="py-2.5 px-2 text-right text-text-muted">₹150/hr</td>
 </tr>
 <tr>
 <td class="py-2.5 px-2 font-semibold">4 Hrs - 40 KM</td>
 <td class="py-2.5 px-2 text-right text-primary font-bold">₹1,100</td>
 <td class="py-2.5 px-2 text-right text-text-muted">₹18/km</td>
-<td class="py-2.5 px-2 text-right text-text-muted">₹150/hr</td>
 </tr>
 <tr>
 <td class="py-2.5 px-2 font-semibold">8 Hrs - 80 KM</td>
 <td class="py-2.5 px-2 text-right text-primary font-bold">₹2,100</td>
 <td class="py-2.5 px-2 text-right text-text-muted">₹16/km</td>
-<td class="py-2.5 px-2 text-right text-text-muted">₹120/hr</td>
 </tr>
 <tr>
 <td class="py-2.5 px-2 font-semibold">12 Hrs - 120 KM</td>
 <td class="py-2.5 px-2 text-right text-primary font-bold">₹2,800</td>
 <td class="py-2.5 px-2 text-right text-text-muted">₹15/km</td>
-<td class="py-2.5 px-2 text-right text-text-muted">₹120/hr</td>
 </tr>
 </tbody>
 </table>
@@ -812,7 +807,7 @@
 <div class="flex flex-col items-center text-center gap-2 max-w-3xl mx-auto">
 <span class="font-eyebrow-badge text-xs text-primary uppercase tracking-wider">07 / ENTERPRISE BRANDING</span>
 <h2 class="text-2xl sm:text-3xl lg:text-4xl text-text-primary font-extrabold">
-          Your Mobility Business. Your Brand. Your Platform.
+          Your Mobility Business. Your Brand. Our Platform.
         </h2>
 <p class="text-xs sm:text-sm md:text-base text-on-surface-variant">
           CityRideTaxi powers the backend infrastructure while the entire suite launches under your corporate identity and app store accounts.
@@ -904,21 +899,21 @@
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 <div class="flex flex-col gap-1">
 <label class="font-eyebrow-badge text-[10px] text-text-muted uppercase">Full Name *</label>
-<input id="ent-name" name="from_name" class="h-11 sm:h-10 px-3 rounded bg-surface-slate-base text-text-primary border border-white/10 focus:outline-none focus:ring-1 focus:ring-primary text-base sm:text-xs w-full" placeholder="e.g. Vikram Malhotra" required="" type="text"/>
+<input id="ent-name" name="from_name" class="h-11 sm:h-10 px-3 rounded bg-surface-slate-base text-text-primary border border-white/10 focus:outline-none focus:ring-1 focus:ring-primary text-base sm:text-xs w-full" placeholder="enter your name" required="" type="text"/>
 </div>
 <div class="flex flex-col gap-1">
 <label class="font-eyebrow-badge text-[10px] text-text-muted uppercase">Organization / Fleet *</label>
-<input id="ent-org" name="organization" class="h-11 sm:h-10 px-3 rounded bg-surface-slate-base text-text-primary border border-white/10 focus:outline-none focus:ring-1 focus:ring-primary text-base sm:text-xs w-full" placeholder="e.g. Metro TransLogix" required="" type="text"/>
+<input id="ent-org" name="organization" class="h-11 sm:h-10 px-3 rounded bg-surface-slate-base text-text-primary border border-white/10 focus:outline-none focus:ring-1 focus:ring-primary text-base sm:text-xs w-full" placeholder="" required="" type="text"/>
 </div>
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 <div class="flex flex-col gap-1">
 <label class="font-eyebrow-badge text-[10px] text-text-muted uppercase">Corporate Email *</label>
-<input id="ent-email" name="reply_to" class="h-11 sm:h-10 px-3 rounded bg-surface-slate-base text-text-primary border border-white/10 focus:outline-none focus:ring-1 focus:ring-primary text-base sm:text-xs w-full" placeholder="vikram@translogix.in" required="" type="email"/>
+<input id="ent-email" name="reply_to" class="h-11 sm:h-10 px-3 rounded bg-surface-slate-base text-text-primary border border-white/10 focus:outline-none focus:ring-1 focus:ring-primary text-base sm:text-xs w-full" placeholder="" required="" type="email"/>
 </div>
 <div class="flex flex-col gap-1">
 <label class="font-eyebrow-badge text-[10px] text-text-muted uppercase">Phone / WhatsApp *</label>
-<input id="ent-phone" name="phone" class="h-11 sm:h-10 px-3 rounded bg-surface-slate-base text-text-primary border border-white/10 focus:outline-none focus:ring-1 focus:ring-primary text-base sm:text-xs w-full" placeholder="+91 98765 43210" required="" type="tel"/>
+<input id="ent-phone" name="phone" class="h-11 sm:h-10 px-3 rounded bg-surface-slate-base text-text-primary border border-white/10 focus:outline-none focus:ring-1 focus:ring-primary text-base sm:text-xs w-full" placeholder="enter your number" required="" type="tel"/>
 </div>
 </div>
 <button id="ent-submit-btn" class="w-full py-3.5 rounded-lg bg-primary-container text-on-primary font-semibold text-sm hover:bg-primary transition-all shadow-[0_0_20px_rgba(16,185,129,0.4)] min-h-[44px]" type="submit">
